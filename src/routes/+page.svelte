@@ -1,6 +1,7 @@
 <script>
   import DemoPage from '$components/demo/DemoPage.svelte';
   import LandingDemo from '$lib/components/demo/LandingDemo.svelte';
+  import ProfileDemo from '$components/demo/ProfileDemo.svelte';
   import { onMount } from 'svelte';
 
   onMount(() => {
@@ -28,3 +29,7 @@
     <LandingDemo/>
   </DemoPage>
 
+  <DemoPage>
+    <ProfileDemo/>
+  </DemoPage>
+</main>
