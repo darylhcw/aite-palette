@@ -1,9 +1,14 @@
 <script>
   import { palette } from '$stores/paletteStore';
+  import { mediaQuery } from '$stores/MediaQuery.svelte';
   import hamburgerIcon from '$assets/icons/hamburger.svg';
 
   const brandCircleOffsetRem = 0.4;
   $: brandMLRem = $palette.length * brandCircleOffsetRem + 2;
+
+  $: {
+    if (showMenu && $mediaQuery.sm) showMenu = false;
+  }
 
   let navLinks = ["Profile", "Dashboard", "Blog", "Chat"]
   let showMenu = false;
@@ -14,7 +19,7 @@
 
 </script>
 
-<div class="navbar shadow">
+<div class="relative navbar shadow bg-white z-50">
   <div class="navbar-start relative flex align-center">
     <button class="sm:hidden cursor-pointer" on:click={toggleHamburger}>
       <img class="w-8 mr-2"
@@ -23,7 +28,7 @@
            tabIndex={0}/>
     </button>
     {#if showMenu}
-      <ul class="menu absolute top-full -left-2 rounded-box z-20 bg-white">
+      <ul class="menu absolute top-full -left-2 rounded-box z-20 bg-white shadow-md shadow-slate-500">
         {#each navLinks as page}
           <li><a href={'#'}>{page}</a></li>
         {/each}
@@ -53,7 +58,7 @@
   </div>
 
   <div class="navbar-end">
-    <button class="btn btn-sm md:btn-md md:text-base text-sm">
+    <button class="btn btn-sm sm:btn-md md:text-sm text-xs shadow">
       Button
     </button>
   </div>
