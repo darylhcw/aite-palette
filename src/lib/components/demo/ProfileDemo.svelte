@@ -53,7 +53,7 @@
   </div>
 
   <header class="w-full mt-2 flex flex-col justify-center text-center">
-    <h2 class="font-semibold sm:text-lg text-md">{`${firstName} ${lastName}`}</h2>
+    <h2 class="font-semibold sm:text-lg text-md">{firstName} {lastName}</h2>
     <p class="font-normal text-neutral-400 sm:text-sm text-xs">{email}</p>
     <p class="mt-4 italic text-neutral-700 sm:text-lg text-md">{`"${tagline}"`}</p>
   </header>
@@ -80,7 +80,7 @@
     </div>
 
     <label>
-      <p class="mt-2 ml-2 sm:text-base text-sm font-light">Tagline</p>
+      <p class="mt-4 ml-2 sm:text-base text-sm font-light">Tagline</p>
       <textarea class="textarea textarea-bordered block mt-1 w-full sm:text-base text-xs"
                 rows={4} bind:value={tagline}/>
     </label>

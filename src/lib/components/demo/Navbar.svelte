@@ -36,13 +36,14 @@
     {/if}
     <div class="relative md:h-8 h-6 self-center">
       {#each [...$palette].reverse() as color, i}
-        <div class={`absolute md:h-8 md:w-8 h-6 w-6 rounded-full ${color}`}
-            style={`left: ${i*brandCircleOffsetRem}rem;`}>
+        <div class="absolute md:h-8 md:w-8 h-6 w-6 rounded-full {color}"
+            style:left="{i*brandCircleOffsetRem}rem">
         </div>
       {/each}
     </div>
     <a class="font-semibold md:text-base text-xs -translate-x-2 md:translate-x-0"
-       style={`margin-left: ${brandMLRem}rem`} href={'#'}>
+       style:margin-left="{brandMLRem}rem"
+       href={'#'}>
       Brand
     </a>
   </div>
