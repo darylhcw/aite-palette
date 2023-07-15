@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import { palette } from '$stores/paletteStore';
   import { mediaQuery } from '$stores/MediaQuery.svelte';
 

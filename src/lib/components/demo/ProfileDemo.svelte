@@ -1,6 +1,6 @@
-<script>
+<script lang="ts">
   import profilePic from '$assets/images/emmaProfile.png';
-  import CameraIcon from '$lib/components/svg/camera.svelte';
+  import CameraIcon from '$lib/components/svg/Camera.svelte';
 
   let details = [
     {

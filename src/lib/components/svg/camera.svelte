@@ -1,5 +1,5 @@
-<script>
-  export let fill = "text-white";
+<script lang="ts">
+  export let fill: string = "text-white";
 </script>
 
 
