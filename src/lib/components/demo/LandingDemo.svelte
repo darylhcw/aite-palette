@@ -11,16 +11,16 @@
   <div class="sm:w-1/2 w-full flex justify-center"
        style={$mediaQuery?.sm ? `margin-right:${headerMarginRightRem}rem`: ""}>
     <header class="sm:p-0 p-2 ml-6">
-      <h2 class="lg:mb-3 sm:mb-1 lg:text-4xl min-[840px]:text-3xl md:text-2xl min-[700px]:text-xl text-lg font-semibold">
+      <h2 class="sm:mb-3 mb-1 lg:text-4xl min-[840px]:text-3xl md:text-2xl min-[700px]:text-xl text-lg font-semibold">
         See Your Palette in Action
       </h2>
-      <p class="mb-2 lg:text-base min-[840px]:text-sm sm:text-xs text-xs">
+      <p class="mb-3 lg:text-base min-[840px]:text-sm leading-snug">
         Examples made with DaisyUI and Tailwind CSS.
       </p>
-      <button class="btn btn-primary btn-sm md:btn-md md:text-sm text-xs shadow-md  ">
+      <button class="btn btn-primary btn-sm md:btn-md shadow-md  ">
         Randomize
       </button>
-      <button class="btn btn-sm md:btn-md mb-6 md-text-sm text-xs shadow-md">
+      <button class="btn btn-sm md:btn-md mb-6 shadow-md">
         Randomize
       </button>
     <header/>

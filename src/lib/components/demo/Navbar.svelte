@@ -28,7 +28,7 @@
            tabIndex={0}/>
     </button>
     {#if showMenu}
-      <ul class="menu absolute top-full -left-2 rounded-box z-20 bg-white shadow-md shadow-slate-500">
+      <ul class="menu absolute top-full -left-2 rounded-box z-20 text-base bg-white shadow-md shadow-slate-500">
         {#each navLinks as page}
           <li><a href={'#'}>{page}</a></li>
         {/each}
@@ -41,7 +41,7 @@
         </div>
       {/each}
     </div>
-    <a class="font-semibold md:text-base text-xs -translate-x-2 md:translate-x-0"
+    <a class="font-semibold md:text-base text-sm -translate-x-2 md:translate-x-0"
        style:margin-left="{brandMLRem}rem"
        href={'#'}>
       Brand
@@ -52,14 +52,14 @@
     <ul class="menu menu-horizontal">
       {#each navLinks as page}
         <li>
-          <a class="font-semibold md:text-base text-xs" href={'#'}>{page}</a>
+          <a class="font-semibold md:text-base text-sm" href={'#'}>{page}</a>
         </li>
       {/each}
     </ul>
   </div>
 
   <div class="navbar-end">
-    <button class="btn btn-sm sm:btn-md md:text-sm text-xs shadow">
+    <button class="btn btn-sm sm:btn-md shadow">
       Button
     </button>
   </div>
