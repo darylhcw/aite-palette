@@ -21,12 +21,27 @@
     font-weight: 700;
     src: url("/fonts/NotoSans-Bold.ttf");
   }
+  @font-face {
+    font-family: Roboto;
+    font-weight: 400;
+    src: url("/fonts/Roboto-Regular.ttf");
+  }
+  @font-face {
+    font-family: Roboto;
+    font-weight: 600;
+    src: url("/fonts/Roboto-SemiBold.ttf");
+  }
+  @font-face {
+    font-family: Roboto;
+    font-weight: 700;
+    src: url("/fonts/Roboto-Bold.ttf");
+  }
 }
 
 @tailwind components;
 
 @layer components {
-  .btn{
+  .btn {
     font-size: 0.875rem;
     font-weight: semibold;
     text-transform: none;

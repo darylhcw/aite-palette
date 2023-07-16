@@ -7,6 +7,7 @@ export default {
     extend: {
       fontFamily: {
         'sans': ['Noto Sans', ...defaultTheme.fontFamily.sans],
+        'roboto': ['Roboto', ...defaultTheme.fontFamily.mono],
       }
     },
   },
