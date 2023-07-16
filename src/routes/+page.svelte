@@ -25,7 +25,7 @@
     </h2>
   </DemoPage>
 
-  <DemoPage>
+  <DemoPage paddings={false}>
     <LandingDemo/>
   </DemoPage>
 

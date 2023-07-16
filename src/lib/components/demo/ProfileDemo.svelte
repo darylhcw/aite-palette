@@ -36,7 +36,7 @@
 
 </script>
 
-<div class="relative max-w-3xl mx-auto my-9 sm:rounded-2xl rounded-xl overflow-hidden bg-white shadow-md">
+<div class="relative max-w-3xl mx-auto sm:rounded-2xl rounded-xl overflow-hidden bg-white shadow-md">
   <div class="relative h-52 sm:h-60 pt-5 flex justify-center">
     <div class="absolute top-0 w-full h-1/2 bg-slate-600"/>
     <div class="relative">
