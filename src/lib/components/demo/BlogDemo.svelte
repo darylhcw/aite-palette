@@ -6,9 +6,10 @@
 
   import SearchBar from '$components/demo/SearchBar.svelte';
   import Tag from '$components/demo/Tag.svelte';
+  import NotFound from '$components/demo/NotFound.svelte';
   import { mediaQuery } from '$stores/MediaQuery.svelte';
 
-  let query = "";
+  export let query = "";
 
   let blogPosts = [
     {
@@ -138,4 +139,8 @@
       </article>
     {/each}
   </div>
+
+  {#if filteredPosts.length <= 0}
+    <NotFound/>
+  {/if}
 </div>

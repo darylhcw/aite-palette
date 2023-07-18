@@ -37,4 +37,8 @@
   <DemoPage>
     <BlogDemo/>
   </DemoPage>
+
+  <DemoPage>
+    <BlogDemo query="Never gonna give you up?"/>
+  </DemoPage>
 </main>
