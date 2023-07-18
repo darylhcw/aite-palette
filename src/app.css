@@ -54,3 +54,12 @@
 }
 
 @tailwind utilities;
+
+/* End text in ellipsis (single line) */
+@layer utilities {
+  .ellipsis-line {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+}
