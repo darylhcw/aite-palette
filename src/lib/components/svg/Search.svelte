@@ -2,7 +2,7 @@
   export let fill: string = "text-white";
 </script>
 
-<svg class="{fill} w-full h-full"
+<svg class="{fill} w-full h-full aspect-square"
      xmlns="http://www.w3.org/2000/svg"
      width="1em" height="1em" viewBox="0 0 32 32">
   <path fill="currentColor"
