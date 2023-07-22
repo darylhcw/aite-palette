@@ -3,6 +3,7 @@
   import LandingDemo from '$components/demo/LandingDemo.svelte';
   import ProfileDemo from '$components/demo/ProfileDemo.svelte';
   import BlogDemo from '$components/demo/BlogDemo.svelte';
+  import ChatDemo from '$components/demo/ChatDemo.svelte';
   import { onMount } from 'svelte';
 
   onMount(() => {
@@ -40,5 +41,9 @@
 
   <DemoPage>
     <BlogDemo query="Never gonna give you up?"/>
+  </DemoPage>
+
+  <DemoPage>
+    <ChatDemo/>
   </DemoPage>
 </main>
