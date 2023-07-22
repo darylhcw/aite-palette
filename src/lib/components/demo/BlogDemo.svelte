@@ -111,10 +111,10 @@
     </article>
   {/if}
 
-  <div class="grid md:grid-cols-3 min-[510px]:grid-cols-2 justify-center gap-8">
+  <div class="grid md:grid-cols-3 min-[32rem]:grid-cols-2 justify-center gap-8">
     <!-- First post hidden (see above) unless mobile -->
     {#each filteredPosts as post, index}
-      <article class="{index === 0 ? "hidden": ""} card max-w-xs min-w-0 min-[300px]:h-[30rem] h-[25rem] text-black bg-white shadow-md">
+      <article class="{index === 0 ? "hidden": ""} card max-w-xs min-w-0 min-[0rem] min-[19rem]:h-[30rem] h-[25rem] text-black bg-white shadow-md">
         <figure>
           <img class="w-full max-h-72 object-fill" src={post.src} alt={post.title}>
         </figure>
