@@ -8,6 +8,9 @@ export default {
       fontFamily: {
         'sans': ['Noto Sans', ...defaultTheme.fontFamily.sans],
         'roboto': ['Roboto', ...defaultTheme.fontFamily.mono],
+      },
+      colors: {
+        'black-1/4': "#00000040"
       }
     },
   },

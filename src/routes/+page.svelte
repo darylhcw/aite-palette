@@ -4,6 +4,7 @@
   import ProfileDemo from '$components/demo/ProfileDemo.svelte';
   import BlogDemo from '$components/demo/BlogDemo.svelte';
   import ChatDemo from '$components/demo/ChatDemo.svelte';
+  import DataDemo from '$components/demo/DataDemo.svelte';
   import { onMount } from 'svelte';
 
   onMount(() => {
@@ -45,5 +46,9 @@
 
   <DemoPage>
     <ChatDemo/>
+  </DemoPage>
+
+  <DemoPage>
+    <DataDemo/>
   </DemoPage>
 </main>
