@@ -5,6 +5,7 @@
   import BlogDemo from '$components/demo/BlogDemo.svelte';
   import ChatDemo from '$components/demo/ChatDemo.svelte';
   import DataDemo from '$components/demo/DataDemo.svelte';
+  import TimelineDemo from '$components/demo/TimelineDemo.svelte';
   import { onMount } from 'svelte';
 
   onMount(() => {
@@ -50,5 +51,10 @@
 
   <DemoPage>
     <DataDemo/>
+  </DemoPage>
+
+  <!-- bgColor = slate-800 -->
+  <DemoPage bgColor="#1e293b">
+    <TimelineDemo/>
   </DemoPage>
 </main>

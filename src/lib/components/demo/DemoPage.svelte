@@ -2,9 +2,11 @@
   import Navbar from './Navbar.svelte';
 
   export let paddings: boolean = true;
+  export let bgColor: string = "#f1f5f9"; // slate-100
 </script>
 
-<section class="mb-8 overflow-hidden rounded-xl sm:rounded-2xl bg-slate-100">
+<section class="mb-8 overflow-hidden rounded-xl sm:rounded-2xl"
+         style="background: {bgColor};">
   <Navbar/>
   {#if paddings}
     <div class="pt-10 pb-16">
