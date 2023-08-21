@@ -5,11 +5,12 @@
   export let bgColor: string = "#f1f5f9"; // slate-100
 </script>
 
-<section class="mb-8 overflow-hidden rounded-xl sm:rounded-2xl"
-         style="background: {bgColor};">
+<section class="mb-8 overflow-hidden rounded-xl sm:rounded-2xl
+                border-t border-slate-200">
   <Navbar/>
   {#if paddings}
-    <div class="pt-10 pb-16">
+    <div class="pt-10 pb-16"
+         style="background: {bgColor};">
       <slot/>
     </div>
   {:else}
