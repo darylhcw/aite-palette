@@ -65,11 +65,11 @@
     }
   ];
 
-  let tableTabs = ["Obsidian Inc.", "Erytheia Ltd", "Lazuli Corp."];
+  let tableTabs = ["Garnet Inc.", "Zircon Ltd", "Lazuli Corp."];
   let tableCols = ["NAME", "PALETTE", "COST", "PROFIT"]
   let tableRows = [
     {
-      name: "Roselle Artwell",
+      name: "Roselle Brushwelle",
       title: "Marketing Specialist",
       palette: "Pristine and Beautiful",
       colors: ["bg-slate-200", "bg-slate-300", "bg-slate-400", "bg-slate-500", "bg-slate-600"],
@@ -77,7 +77,7 @@
       profit: "$295",
     },
     {
-      name: "Millie Penciel",
+      name: "Risa Romano",
       title: "Marketing Specialist",
       palette: "Pristine and Beautiful",
       colors: ["bg-slate-200", "bg-slate-300", "bg-slate-400", "bg-slate-500", "bg-slate-600"],
@@ -85,7 +85,7 @@
       profit: "$295",
     },
     {
-      name: "Elara",
+      name: "Stella Artiste",
       title: "Marketing Specialist",
       palette: "Pristine and Beautiful",
       colors: ["bg-slate-200", "bg-slate-300", "bg-slate-400", "bg-slate-500", "bg-slate-600"],

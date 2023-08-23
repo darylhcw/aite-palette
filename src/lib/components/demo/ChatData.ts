@@ -1,6 +1,6 @@
 import emmaPic from '$assets/images/emmaProfile.png';
-import camillePic from '$assets/images/camille.png';
-import elaraPic from '$assets/images/elara.png';
+import risaPic from '$assets/images/risa.png';
+import stellaPic from '$assets/images/stella.png';
 import rosellePic from '$assets/images/roselle.png';
 import diegoPic from '$assets/images/diego.png';
 
@@ -23,23 +23,23 @@ export interface Contact {
 
 export const contacts = {
   millie: {
-    name: "Camille Penciel",
-    src: camillePic,
+    name: "Risa Romano",
+    src: risaPic,
   },
   emma: {
     name: "Emma Paletto",
     src: emmaPic,
   },
   elira: {
-    name: "Elara",
-    src: elaraPic,
+    name: "Stella Artiste",
+    src: stellaPic,
   },
   diego: {
     name: "Diego Sketcher",
     src: diegoPic,
   },
   rosemi: {
-    name: "Roselle Artwell",
+    name: "Roselle Brushwelle",
     src: rosellePic,
   }
 }
