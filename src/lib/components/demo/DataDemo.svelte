@@ -66,39 +66,54 @@
   ];
 
   let tableTabs = ["Garnet Inc.", "Zircon Ltd", "Lazuli Corp."];
-  let tableCols = ["NAME", "PALETTE", "COST", "PROFIT"]
+  let tableCols = ["NAME", "PALETTE", "STATUS", "TOTAL COST"]
   let tableRows = [
     {
       name: "Roselle Brushwelle",
       title: "Marketing Specialist",
       palette: "Pristine and Beautiful",
       colors: ["bg-slate-200", "bg-slate-300", "bg-slate-400", "bg-slate-500", "bg-slate-600"],
-      cost: "$1578",
-      profit: "$295",
+      status: "Approved",
+      cost: "$1578.69",
     },
     {
       name: "Risa Romano",
       title: "Marketing Specialist",
       palette: "Pristine and Beautiful",
       colors: ["bg-slate-200", "bg-slate-300", "bg-slate-400", "bg-slate-500", "bg-slate-600"],
-      cost: "$1578",
-      profit: "$295",
+      status: "Pending",
+      cost: "$1578.69",
     },
     {
       name: "Stella Artiste",
       title: "Marketing Specialist",
       palette: "Pristine and Beautiful",
       colors: ["bg-slate-200", "bg-slate-300", "bg-slate-400", "bg-slate-500", "bg-slate-600"],
-      cost: "$1578",
+      cost: "$1578.69",
+      status: "Rejected",
       profit: "$295",
     },
   ]
 
   let currentTab = tableTabs[0];
-  let tableRow = tableRows[0]
+
   function tabSelected(tab: string) {
     currentTab = tab;
-    tableRow = tableRows[tableTabs.indexOf(tab)]
+  }
+
+  let statusColors : { [key: string]: { box: string, text: string}} = {
+    "Approved": {
+      box: "bg-emerald-100",
+      text: "text-emerald-700"
+    },
+    "Pending": {
+      box: "bg-yellow-100",
+      text: "text-yellow-700"
+    },
+    "Rejected": {
+      box: "bg-red-100",
+      text: "text-red-700"
+    },
   }
 
 </script>
@@ -203,7 +218,7 @@
           <tr class="border-none">
             <th class="sm:w-12 w-6 bg-slate-200 rounded-l-lg border-r-2 border-white"/>
             {#each tableCols as col, index}
-              <th class="font-normal {index >= 2 ? "text-right" : ""} bg-slate-200
+              <th class="font-normal {index >= 3 ? "text-right" : ""} bg-slate-200
                         {index === tableCols.length - 1 ? "rounded-r-lg" : ""} border-r-2 border-white">
                 {col}
               </th>
@@ -211,23 +226,29 @@
           </tr>
         </thead>
         <tbody class="sm:text-base text-sm text-black font-roboto whitespace-nowrap">
-          {#each [1, 2, 3, 4] as row}
+          {#each tableRows as row, i}
             <tr>
-              <th class="font-normal">{row}</th>
+              <th class="font-normal">{i+1}</th>
               <td>
-                <p>{tableRow.name}</p>
-                <p class="text-neutral-400">{tableRow.title}</p>
+                <p>{row.name}</p>
+                <p class="text-neutral-400">{row.title}</p>
               </td>
               <td>
-                <p>{tableRow.palette}</p>
+                <p>{row.palette}</p>
                 <div class="flex">
-                  {#each tableRow.colors as color}
+                  {#each row.colors as color}
                     <div class="sm:w-5 sm:h-5 w-4 h-4 {color}"/>
                   {/each}
                 </div>
               </td>
-              <td class={"text-right"}>{tableRow.profit}</td>
-              <td class={"text-right"}>{tableRow.cost}</td>
+              <td class={"text-left"}>
+                <div class="w-fit px-3 rounded-full {statusColors[row.status].box}">
+                  <p class="{statusColors[row.status].text} text-left">
+                    {row.status}
+                  </p>
+                </div>
+              </td>
+              <td class={"text-right"}>{row.cost}</td>
             </tr>
           {/each}
           <tr/>
