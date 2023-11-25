@@ -1,5 +1,5 @@
 <script lang=ts context="module">
-    /**
+  /**
    * Check if matching breakpoint is true.
    * - Note that if the smallest is true, eveything else is too.
    * - You have to handle the cases manually appropriately.
@@ -16,6 +16,8 @@
   type BPKey = keyof typeof defaultBPs;
 
   const mediaQueryInner = writable(defaultBPs, (set) => {
+    if (typeof window === "undefined") return;
+
     const breakpoints = [
       { value: "sm", mediaquery: window.matchMedia("(min-width: 640px)") },
       { value: "md", mediaquery: window.matchMedia("(min-width: 768px)") },

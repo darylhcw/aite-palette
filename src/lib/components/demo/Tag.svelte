@@ -1,8 +1,8 @@
 <script lang="ts">
-  export let tag : string = "<TAG>";
+  export let tag = "<TAG>";
   export let size : "small" | "normal" = "small";
-  export let selectable: boolean = false;
-  export let selected: boolean = false;
+  export let selectable = false;
+  export let selected = false;
 
   // Let here be an example of .. when Tailwind is not so great vs "just CSS".
   $:baseClasses = `rounded-badge px-4 py-[0.125rem] border ${size === "small" ? "text-sm" : "text-base"} font-roboto`

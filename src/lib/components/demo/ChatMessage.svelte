@@ -5,7 +5,7 @@
   export let sender: Contact;
   export let time: string;
   export let message: string;
-  export let left: boolean = true;
+  export let left = true;
 </script>
 
 <div class="chat mb-2 p-4 { left ? "chat-start" : "chat-end"}">

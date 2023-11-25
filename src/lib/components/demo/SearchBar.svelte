@@ -1,6 +1,6 @@
 <script lang="ts">
   import SearchIcon from '$lib/components/svg/Search.svelte';
-  export let query: string = "";
+  export let query = "";
 </script>
 
 <div class="relative w-full flex items-center h-12 drop-shadow-md">

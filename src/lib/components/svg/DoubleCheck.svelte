@@ -1,5 +1,5 @@
 <script lang="ts">
-  export let fill: string = "text-white";
+  export let fill = "text-white";
 </script>
 
 <svg class="{fill} w-full h-full aspect-square"
