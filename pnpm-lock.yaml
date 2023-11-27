@@ -4,6 +4,11 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
+dependencies:
+  alwan:
+    specifier: ^2.0.0
+    version: 2.0.0
+
 devDependencies:
   '@sveltejs/adapter-auto':
     specifier: ^2.0.0
@@ -643,6 +648,10 @@ packages:
       json-schema-traverse: 0.4.1
       uri-js: 4.4.1
     dev: true
+
+  /alwan@2.0.0:
+    resolution: {integrity: sha512-IkPWa7HZjVu74Oc1Zz3nrv5mklx5Sd25X7yh6vysl0+nMs49bkRBatyWlWeaRNV1IMeMJPWrrDFbAZIQlYC3WA==}
+    dev: false
 
   /ansi-regex@5.0.1:
     resolution: {integrity: sha512-quJQXlTSUGL2LH9SUXo8VwsY4soanhgo6LNSm84E1LBcE8s3O0wpdiRzyR9z/ZZJMlMWv37qOOb9pdJlMUEKFQ==}

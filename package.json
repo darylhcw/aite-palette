@@ -28,5 +28,8 @@
 		"vite": "^4.3.0",
 		"vite-plugin-eslint": "^1.8.1"
 	},
-	"type": "module"
+	"type": "module",
+	"dependencies": {
+		"alwan": "^2.0.0"
+	}
 }
