@@ -113,7 +113,7 @@
     background: #64748b;
   }
   .step-current::after {
-    /* slate-50 */
-    background:#f8fafc;
+    /* slate-100 */
+    background:#f1f5f9;
   }
 </style>
