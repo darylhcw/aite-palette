@@ -1,4 +1,5 @@
 <script lang="ts">
+  import Palette from '$components/Palette.svelte';
   import DemoPage from '$components/demo/DemoPage.svelte';
   import LandingDemo from '$components/demo/LandingDemo.svelte';
   import ProfileDemo from '$components/demo/ProfileDemo.svelte';
@@ -24,9 +25,7 @@
 
 <main class="mx-auto max-w-screen-xl px-4">
   <DemoPage>
-    <h2 class="text-5xl p-4">
-      Palette
-    </h2>
+    <Palette/>
   </DemoPage>
 
   <DemoPage paddings={false}>
