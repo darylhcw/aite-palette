@@ -1,6 +1,28 @@
 @tailwind base;
 
 @layer base {
+  :root {
+    --palette-100: 210deg 40% 96%;
+    --palette-200: 214deg 32% 91%;
+    --palette-300: 213deg 27% 84%;
+    --palette-400: 215deg 20% 65%;
+    --palette-500: 215deg 16% 47%;
+    --palette-600: 215deg 19% 35%;
+    --palette-700: 215deg 21% 27%;
+    --palette-800: 217deg 33% 17%;
+    --palette-900: 222deg 47% 11%;
+
+    --pgreys-100: 0deg 0% 96%;
+    --pgreys-200: 0deg 0% 90%;
+    --pgreys-300: 0deg 0% 83%;
+    --pgreys-400: 0deg 0% 64%;
+    --pgreys-500: 0deg 0% 45%;
+    --pgreys-600: 0deg 0% 32%;
+    --pgreys-700: 0deg 0% 25%;
+    --pgreys-800: 0deg 0% 15%;
+    --pgreys-900: 0deg 0% 9%;
+  }
+
   @font-face {
     font-family: Noto Sans;
     font-weight: 300;
