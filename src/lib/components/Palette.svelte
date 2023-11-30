@@ -1,11 +1,16 @@
 <script lang="ts">
   import ColorPicker from '$lib/components/ColorPicker.svelte';
+  import { createPaletteContext } from '$lib/context/palette.svelte';
 
+  const mainPaletteKey = "main";
+  createPaletteContext(mainPaletteKey);
   const paletteVars = [...Array(9)].map((_, i) => {
     const x = i + 1;
     return `--palette-${x}00`
   })
 
+  const greyPaletteKey = "greys";
+  createPaletteContext(greyPaletteKey);
   const greyVars = [...Array(9)].map((_, i) => {
     const x = i + 1;
     return `--pgreys-${x}00`
@@ -18,13 +23,15 @@
 
 <div class="flex gap-x-1">
   {#each paletteVars as varname}
-    <ColorPicker cssColorVar={varname}/>
+    <ColorPicker paletteKey={mainPaletteKey}
+                 cssColorVar={varname} />
   {/each}
 </div>
 
 <div class="flex gap-x-1">
   {#each greyVars as varname}
-    <ColorPicker cssColorVar={varname}/>
+    <ColorPicker paletteKey={greyPaletteKey}
+                 cssColorVar={varname} />
   {/each}
 </div>
 
