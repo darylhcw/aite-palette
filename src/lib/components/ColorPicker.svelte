@@ -1,4 +1,7 @@
 <script lang="ts">
+  // We use a library for colorPicker instead of native input type="color"
+  // because cross-browser support for that is terrible.
+  // The picker implementation is COMPLETELY different on chrome/firefox.
   import { onMount } from 'svelte';
   import 'alwan/dist/css/alwan.min.css';
   import { counter } from '$lib/stores/counter';
@@ -7,10 +10,6 @@
   import type Alwan from 'alwan';
   import type { HSL } from '$lib/types/colors';
 
-  /**
-   * paletteKey: key for palette it should belong to.
-   * cssColorVar: the css var this picker binds to.
-   */
   export let paletteKey: string;
   export let cssColorVar = "";
   let paletteDiv : HTMLElement | undefined;
