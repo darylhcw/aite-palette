@@ -4,20 +4,24 @@
   // The picker implementation is COMPLETELY different on chrome/firefox.
   import { onMount } from 'svelte';
   import 'alwan/dist/css/alwan.min.css';
-  import { counter } from '$lib/stores/counter';
   import { hexFromCSSVar, setHslToCSSVar } from '$lib/util/colorConvert';
+  import { generatePaletteFromColor } from '$lib/util/paletteGenerator';
   import { getPaletteContext } from '$lib/context/palette.svelte';
   import type Alwan from 'alwan';
   import type { HSL } from '$lib/types/colors';
 
   export let paletteKey: string;
+  export let palettePos: number;
   export let cssColorVar = "";
   let paletteDiv : HTMLElement | undefined;
   let palette : Alwan;
-
   const paletteContext = getPaletteContext(paletteKey);
 
   onMount(async () => {
+    if (paletteKey === undefined && palettePos === undefined) {
+      console.error("No paletteKey/palettePos for ColorPicker");
+    }
+
     await import('alwan').then(module => {
       palette = new module.default(`#${paletteDiv?.id}`, {
         opacity: false,
@@ -37,27 +41,28 @@
     });
 
     registerPaletteColor(palette);
-
-    counter.increment();
   });
 
   function registerPaletteColor(color: Alwan) {
     const paletteColor = {
       alwan: color,
       setPaletteColor: (col: HSL) => {
-        console.log(col);
+        color.setColor(col);
+        setHslToCSSVar(col, cssColorVar);
       }
     }
-
     paletteContext.addColor(paletteColor);
   }
 
   function generatePaletteColors() {
-    paletteContext.debug();
+    const alwanColor = palette.getColor()
+    const { h, s, l } = alwanColor;
+    const newColors = generatePaletteFromColor({ h:h, s:s, l:l}, palettePos ?? 0);
+    paletteContext.setPaletteColors(newColors);
   }
  </script>
 
-<div id={"COLOR_PICKER_" + $counter} bind:this={paletteDiv} />
+<div id={`COLOR_PICKER_${paletteKey}_${palettePos}`} bind:this={paletteDiv} />
 <button on:click={generatePaletteColors}>
   GENERATE
 </button>

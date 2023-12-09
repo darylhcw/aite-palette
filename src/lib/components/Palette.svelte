@@ -21,16 +21,18 @@
   Palette
 </h2>
 
-<div class="flex gap-x-1">
-  {#each paletteVars as varname}
+<div class="flex gap-x-1 flex-wrap">
+  {#each paletteVars as varname, i}
     <ColorPicker paletteKey={mainPaletteKey}
+                 palettePos={i}
                  cssColorVar={varname} />
   {/each}
 </div>
 
-<div class="flex gap-x-1">
-  {#each greyVars as varname}
+<div class="flex gap-x-1 flex-wrap">
+  {#each greyVars as varname, i}
     <ColorPicker paletteKey={greyPaletteKey}
+                 palettePos={i}
                  cssColorVar={varname} />
   {/each}
 </div>
