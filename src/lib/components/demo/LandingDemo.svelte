@@ -1,6 +1,6 @@
 <script lang="ts">
   import { palette } from '$stores/paletteStore';
-  import { mediaQuery } from '$stores/MediaQuery.svelte';
+  import { mediaQuery } from '$lib/stores/mediaQuery.svelte';
 
   const rectPaletteOffsetRem = 0.75;
   const rectPaletteOffsetRemMobile = 0.5;

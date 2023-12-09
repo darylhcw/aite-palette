@@ -2,7 +2,7 @@
   import ChatContactList from './ChatContactList.svelte';
   import ChatMessage from './ChatMessage.svelte';
   import { contacts, millieChat } from './ChatData';
-  import { mediaQuery } from '$stores/MediaQuery.svelte';
+  import { mediaQuery } from '$lib/stores/mediaQuery.svelte';
 
   let activeChat = {
     contact: contacts.millie,

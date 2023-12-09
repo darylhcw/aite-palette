@@ -7,7 +7,7 @@
   import SearchBar from '$components/demo/SearchBar.svelte';
   import Tag from '$components/demo/Tag.svelte';
   import NotFound from '$components/demo/NotFound.svelte';
-  import { mediaQuery } from '$stores/MediaQuery.svelte';
+  import { mediaQuery } from '$lib/stores/mediaQuery.svelte';
 
   export let query = "";
 
