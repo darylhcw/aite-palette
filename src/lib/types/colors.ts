@@ -3,3 +3,9 @@ export interface HSL {
   s: number;
   l: number;
 }
+
+export interface OKLCH {
+  h: number;
+  c: number;
+  l: number;
+}

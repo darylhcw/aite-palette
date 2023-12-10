@@ -1,19 +1,25 @@
-import type { HSL } from '$lib/types/colors';
+import type { HSL, OKLCH } from '$lib/types/colors';
+import { converter } from 'culori';
 
-/*********************************************
- * We store colors as "HSL strings" in CSS vars.
- * This is for working with Tailwind:
- * https://tailwindcss.com/docs/customizing-colors#using-css-variables
- *
- * Functions here convert to/from that string format to/from a simple HSL object.
- ********************************************/
+const oklchConverter = converter('oklch');
+const hslConverter = converter('hsl');
 
 const DEFAULT_HSL : HSL = {
   h: 0,
   s: 0,
   l: 0
 };
+const DEFAULT_OKLCH : OKLCH = {
+  h: 0,
+  c: 0,
+  l: 0
+};
 
+/**
+ * We store colors as "HSL strings" in CSS vars.
+ * This is for working with Tailwind:
+ * https://tailwindcss.com/docs/customizing-colors#using-css-variables
+ */
 function HSLStrToObj(hslStr: string): HSL {
   if (!hslStr) return DEFAULT_HSL;
 
@@ -38,6 +44,34 @@ function HSLObjToStr(hslObj: HSL): string {
   return `${h}deg ${s}% ${l}%`
 }
 
+function HSLToOKLCH(hsl: HSL) : OKLCH {
+  if (!hsl) return DEFAULT_OKLCH;
+
+  const res = oklchConverter({
+    mode: 'hsl',
+    h: hsl.h,
+    s: hsl.s/100,
+    l: hsl.l/100,
+  });
+
+  return res as OKLCH;
+}
+function OKLCHToHSL(oklch: OKLCH) : HSL {
+  if (!oklch) return DEFAULT_HSL
+
+  const res = hslConverter({
+    mode: "oklch",
+    ...oklch,
+  });
+  if (res.h === undefined) res.h = 0;
+
+  return {
+    h: res.h,
+    s: res.s*100,
+    l: res.l*100,
+  }
+}
+
 function getHSLFromCSSVar(varname: string): HSL {
   if (!varname) return DEFAULT_HSL;
   if (typeof document === "undefined") return DEFAULT_HSL;
@@ -58,6 +92,8 @@ function setHslToCSSVar(hsl: HSL, varname: string) {
 export {
   HSLStrToObj,
   HSLObjToStr,
+  HSLToOKLCH,
+  OKLCHToHSL,
   getHSLFromCSSVar,
   setHslToCSSVar,
 }
