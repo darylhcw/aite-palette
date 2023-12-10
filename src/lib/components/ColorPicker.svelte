@@ -4,7 +4,7 @@
   // The picker implementation is COMPLETELY different on chrome/firefox.
   import { onMount } from 'svelte';
   import 'alwan/dist/css/alwan.min.css';
-  import { hexFromCSSVar, setHslToCSSVar } from '$lib/util/colorConvert';
+  import { getHSLFromCSSVar, setHslToCSSVar } from '$lib/util/colorConvert';
   import { generatePaletteFromColor } from '$lib/util/paletteGenerator';
   import { getPaletteContext } from '$lib/context/palette.svelte';
   import type Alwan from 'alwan';
@@ -25,7 +25,7 @@
     await import('alwan').then(module => {
       palette = new module.default(`#${paletteDiv?.id}`, {
         opacity: false,
-        color: hexFromCSSVar(cssColorVar),
+        color: getHSLFromCSSVar(cssColorVar),
         format: "hex",
       });
     });
