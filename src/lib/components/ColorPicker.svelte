@@ -51,14 +51,14 @@
         setHslToCSSVar(col, cssColorVar);
       }
     }
-    paletteContext.addColor(paletteColor);
+    paletteContext?.addColor(paletteColor, palettePos);
   }
 
   function generatePaletteColors() {
     const alwanColor = palette.getColor()
     const { h, s, l } = alwanColor;
-    const newColors = generatePaletteFromColor({ h:h, s:s, l:l}, palettePos ?? 0);
-    paletteContext.setPaletteColors(newColors);
+    const newColors = generatePaletteFromColor({ h:h, s:s, l:l});
+    paletteContext?.setPaletteColors(newColors);
   }
  </script>
 

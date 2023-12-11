@@ -9,21 +9,20 @@ import type { HSL } from '$lib/types/colors'
 import type { PaletteColor } from '$lib/types/palette';
 
 function createPalette() {
-  const store = writable<PaletteColor[]>([]);
+  const store = writable<{ index: number, color:PaletteColor }[]>([]);
   const { subscribe, update } = store;
 
 	return {
 		subscribe,
-    addColor: (color: PaletteColor) => update((palette) => {
-      return [...palette, color];
+    addColor: (color: PaletteColor, pos: number) => update((palette) => {
+      palette.push({ index: pos, color: color});
+      return palette.toSorted((a, b) => a.index - b.index);
     }),
     setPaletteColors: (colors: HSL[]) => {
       const palette = get(store);
-      colors.forEach((color, i) => {
-        if (i > palette.length - 1) return;
-
-        palette[i].setPaletteColor(color);
-      });
+      palette.map((item)  => {
+        item.color.setPaletteColor(colors[item.index]);
+      })
     },
     debug: () => {
       const palette = get(store);
