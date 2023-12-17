@@ -1,17 +1,18 @@
 <script lang="ts">
   import ColorPicker from '$lib/components/ColorPicker.svelte';
   import { createPaletteContext } from '$lib/context/palette.svelte';
+  import { PALETTE_LENGTH } from '$lib/constants';
 
   const mainPaletteKey = "main";
   createPaletteContext(mainPaletteKey);
-  const paletteVars = [...Array(9)].map((_, i) => {
+  const paletteVars = [...Array(PALETTE_LENGTH)].map((_, i) => {
     const x = i + 1;
     return `--palette-${x}00`
   })
 
   const greyPaletteKey = "greys";
   createPaletteContext(greyPaletteKey);
-  const greyVars = [...Array(9)].map((_, i) => {
+  const greyVars = [...Array(PALETTE_LENGTH)].map((_, i) => {
     const x = i + 1;
     return `--pgreys-${x}00`
   })

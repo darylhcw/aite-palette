@@ -89,6 +89,14 @@ function setHslToCSSVar(hsl: HSL, varname: string) {
   document.documentElement.style.setProperty(varname, hslStr);
 }
 
+function roundHSLColorVals(color: HSL) {
+  return {
+    h: Math.round(color.h),
+    s: Math.round(color.s),
+    l: Math.round(color.l)
+  }
+}
+
 export {
   HSLStrToObj,
   HSLObjToStr,
@@ -96,4 +104,5 @@ export {
   OKLCHToHSL,
   getHSLFromCSSVar,
   setHslToCSSVar,
+  roundHSLColorVals,
 }
