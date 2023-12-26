@@ -1,6 +1,6 @@
 <script lang="ts">
   import ColorPicker from '$lib/components/colorPicker/ColorPicker.svelte';
-  import { getHSLFromCSSVar, setHslToCSSVar } from '$lib/util/colorConvert';
+  import { getHSLFromCSSVar, setHSLToCSSVar } from '$lib/util/colorConvert';
   import { getPaletteContext } from '$lib/context/palette.svelte';
   import type { PaletteChangeEvent, PaletteComponent } from '$lib/types/palette';
   import type { HSL } from '$lib/types/colors';
@@ -22,13 +22,13 @@
         s: event.s,
         l: event.l,
       }
-    setHslToCSSVar(hsl, cssColorVar);
+    setHSLToCSSVar(hsl, cssColorVar);
   }
   function registerColorPalette(palette: PaletteComponent) {
     const paletteColor = {
       setPaletteColor: (col: HSL) => {
         palette.setColor(col);
-        setHslToCSSVar(col, cssColorVar);
+        setHSLToCSSVar(col, cssColorVar);
       }
     }
     paletteContext?.addColor(paletteColor, palettePos);

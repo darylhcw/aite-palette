@@ -81,7 +81,7 @@ function getHSLFromCSSVar(varname: string): HSL {
 
   return hsl;
 }
-function setHslToCSSVar(hsl: HSL, varname: string) {
+function setHSLToCSSVar(hsl: HSL, varname: string) {
   if (!varname) return;
   if (typeof document === "undefined") return;
 
@@ -103,6 +103,6 @@ export {
   HSLToOKLCH,
   OKLCHToHSL,
   getHSLFromCSSVar,
-  setHslToCSSVar,
+  setHSLToCSSVar,
   roundHSLColorVals,
 }
