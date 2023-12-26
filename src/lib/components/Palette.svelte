@@ -1,5 +1,6 @@
 <script lang="ts">
-  import ColorPicker from '$lib/components/ColorPicker.svelte';
+  import PaletteColor from '$lib/components/colorPicker/PaletteColor.svelte';
+  import PaletteGenerator from '$lib/components/colorPicker/PaletteGenerator.svelte';
   import { createPaletteContext } from '$lib/context/palette.svelte';
   import { PALETTE_LENGTH } from '$lib/constants';
 
@@ -22,42 +23,28 @@
   Palette
 </h2>
 
-<div class="flex gap-x-1 flex-wrap">
+<div class="flex mb-2 gap-2">
+  <PaletteGenerator paletteKey={mainPaletteKey}
+                    defaultColor="#94a3b8"
+                    generateText="Generate Main" />
+</div>
+<div class="flex gap-x-1 flex-wrap mb-5">
   {#each paletteVars as varname, i}
-    <ColorPicker paletteKey={mainPaletteKey}
-                 palettePos={i}
-                 cssColorVar={varname} />
+    <PaletteColor paletteKey={mainPaletteKey}
+                  palettePos={i}
+                  cssColorVar={varname} />
   {/each}
 </div>
 
+<div class="flex mb-2 gap-2">
+  <PaletteGenerator paletteKey={greyPaletteKey}
+                    defaultColor="#a3a3a3"
+                    generateText="Generate Greys" />
+</div>
 <div class="flex gap-x-1 flex-wrap">
   {#each greyVars as varname, i}
-    <ColorPicker paletteKey={greyPaletteKey}
-                 palettePos={i}
-                 cssColorVar={varname} />
+    <PaletteColor paletteKey={greyPaletteKey}
+                  palettePos={i}
+                  cssColorVar={varname} />
   {/each}
-</div>
-
-<div class="mt-4">
-  <div class="w-6 h-6 bg-palette-100 inline-block border-black border-2"></div>
-  <div class="w-6 h-6 bg-palette-200 inline-block border-black border-2"></div>
-  <div class="w-6 h-6 bg-palette-300 inline-block border-black border-2"></div>
-  <div class="w-6 h-6 bg-palette-400 inline-block border-black border-2"></div>
-  <div class="w-6 h-6 bg-palette-500 inline-block border-black border-2"></div>
-  <div class="w-6 h-6 bg-palette-600 inline-block border-black border-2"></div>
-  <div class="w-6 h-6 bg-palette-700 inline-block border-black border-2"></div>
-  <div class="w-6 h-6 bg-palette-800 inline-block border-black border-2"></div>
-  <div class="w-6 h-6 bg-palette-900 inline-block border-black border-2"></div>
-</div>
-
-<div>
-  <div class="w-6 h-6 bg-pgreys-100 inline-block border-black border-2"></div>
-  <div class="w-6 h-6 bg-pgreys-200 inline-block border-black border-2"></div>
-  <div class="w-6 h-6 bg-pgreys-300 inline-block border-black border-2"></div>
-  <div class="w-6 h-6 bg-pgreys-400 inline-block border-black border-2"></div>
-  <div class="w-6 h-6 bg-pgreys-500 inline-block border-black border-2"></div>
-  <div class="w-6 h-6 bg-pgreys-600 inline-block border-black border-2"></div>
-  <div class="w-6 h-6 bg-pgreys-700 inline-block border-black border-2"></div>
-  <div class="w-6 h-6 bg-pgreys-800 inline-block border-black border-2"></div>
-  <div class="w-6 h-6 bg-pgreys-900 inline-block border-black border-2"></div>
 </div>
