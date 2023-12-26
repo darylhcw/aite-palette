@@ -23,6 +23,11 @@
   });
 </script>
 
+<svelte:head>
+  <title>Aite Palette</title>
+  <meta name="description" content="Color palette generator for modern-looking websites with examples.">
+</svelte:head>
+
 <main class="mx-auto max-w-screen-xl px-4">
   <DemoPage>
     <Palette/>
