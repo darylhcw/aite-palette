@@ -8,7 +8,7 @@ import {
 } from '$lib/constants';
 
 const MAX_HUE_ROTATION = 30;
-const MAX_HUE_STEP = 2;
+const MAX_HUE_STEP = 3;
 const CENTRAL_LIGHT_HUES = [60, 180, 300];
 const CENTRAL_DARK_HUES = [120, 240, 360];
 
@@ -21,16 +21,16 @@ const CENTRAL_DARK_HUES = [120, 240, 360];
  *   (See PALETTE_LIGHTNESS_RANGES).
  * - For each lighter/darker color step, randomly add/- hue to HSL of color.
  *   (See HUE_RANGE).
- * - With the new color, convert to CIELAB space, and then modify lightness
+ * - With the new color, convert to OKLCH color space, and then modify lightness
  *   (so it fits in the next range in PALETTE_LIGHTNESS_RANGE).
- * - Repeat until all positons filled!
+ * - Repeat until all positions filled!
  *
  * Accepts: HSL color, and 'position' number in palette index.
  * Returns: A set of 8 HSL colors in an array, where the indexes
  *          correspond to positions in the palette.
  */
 function generatePaletteFromColor(color: HSL) : HSL[] {
-  const res : HSL[] = [];
+  let res : HSL[] = [];
   const oklch = HSLToOKLCH(color);
   const pos = getPalettePos(oklch.l  * 100); // Scale to 0-100 used in PALETTE_RANGES
 
@@ -55,7 +55,7 @@ function generatePaletteFromColor(color: HSL) : HSL[] {
   let currDarkColor = color;
   totalHueRotation = 0;
   for (let i = pos + 1; i < PALETTE_LENGTH; i++) {
-    let col = currLightColor;
+    let col = currDarkColor;
 
     const remainingRot = MAX_HUE_ROTATION - totalHueRotation;
     if (remainingRot > 0) {
@@ -63,8 +63,13 @@ function generatePaletteFromColor(color: HSL) : HSL[] {
       col = rotateHueDarker(col, rotation);
       totalHueRotation += rotation;
     }
-    currDarkColor = getNextColor(currLightColor, i);
+    currDarkColor = getNextColor(currDarkColor, i);
     res.push(roundHSLColorVals(currDarkColor));
+  }
+
+  // Try to avoid absolute black/white
+  if (pos !== 0 && pos !== PALETTE_LENGTH - 1) {
+    res = adjustWhiteOrBlackEdgeColors(res);
   }
 
   return res;
@@ -146,6 +151,18 @@ function rotateHueLighter(color: HSL, rot:number) : HSL {
  */
 function randomlyIncreaseOrDecreaseHue(hue: number) {
   return hue + (Math.random() >= 0.5 ? 0.01 : -0.01)
+}
+
+function adjustWhiteOrBlackEdgeColors(colors: HSL[]) {
+  if (!colors) return colors;
+
+  const first = colors[0];
+  first.l = Math.min(98 , first.l);
+
+  const last = colors[colors.length - 1];
+  last.l = Math.max(5, last.l);
+
+  return colors;
 }
 
 export {

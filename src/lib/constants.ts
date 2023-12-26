@@ -1,6 +1,6 @@
 // Palette
-const MIN_LIGHTNESS = 20;
-const MAX_LIGHTNESS = 94;
+const MIN_LIGHTNESS = 19;
+const MAX_LIGHTNESS = 97;
 
 /**
  * Note:
@@ -13,12 +13,12 @@ const MAX_LIGHTNESS = 94;
  *     (They seem harder to use well!)
  */
 const PALETTE_RANGES = [
-  { min: 90, max: MAX_LIGHTNESS },
-  { min: 83, max: 90 },
-  { min: 73, max: 83 },
-  { min: 62, max: 73 },
-  { min: 53, max: 62 },
-  { min: 43, max: 53 },
+  { min: 91, max: MAX_LIGHTNESS },
+  { min: 86, max: 91 },
+  { min: 76, max: 86 },
+  { min: 64, max: 76 },
+  { min: 54, max: 64 },
+  { min: 43, max: 54 },
   { min: 37, max: 43 },
   { min: 26, max: 37 },
   { min: MIN_LIGHTNESS, max: 26 },
