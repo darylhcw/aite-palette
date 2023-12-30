@@ -25,9 +25,12 @@ const PALETTE_RANGES = [
 ]
 const PALETTE_LENGTH = PALETTE_RANGES.length;
 
+const BRAND_TAILWIND_CSS = ["bg-palette-800", "bg-palette-600", "bg-palette-400", "bg-palette-200"]
+
 export {
   MIN_LIGHTNESS,
   MAX_LIGHTNESS,
   PALETTE_RANGES,
-  PALETTE_LENGTH
+  PALETTE_LENGTH,
+  BRAND_TAILWIND_CSS
 }

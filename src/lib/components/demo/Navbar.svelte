@@ -1,15 +1,13 @@
 <script lang="ts">
-  import { palette } from '$stores/paletteStore';
   import { mediaQuery } from '$lib/stores/mediaQuery.svelte';
   import hamburgerIcon from '$assets/icons/hamburger.svg';
+  import { BRAND_TAILWIND_CSS as palette } from '$lib/constants';
 
   const brandCircleOffsetRem = 0.4;
-  $: brandMLRem = $palette.length * brandCircleOffsetRem + 2;
-
+  const brandMLRem = palette.length * brandCircleOffsetRem + 2;
   $: {
     if (showMenu && $mediaQuery.sm) showMenu = false;
   }
-
   let navLinks = ["Profile", "Dashboard", "Blog", "Chat"]
   let showMenu = false;
 
@@ -35,7 +33,7 @@
       </ul>
     {/if}
     <div class="relative md:h-8 h-6 self-center">
-      {#each [...$palette].reverse() as color, i}
+      {#each [...palette].reverse() as color, i}
         <div class="absolute md:h-8 md:w-8 h-6 w-6 rounded-full {color}"
             style:left="{i*brandCircleOffsetRem}rem">
         </div>
@@ -52,7 +50,9 @@
     <ul class="menu menu-horizontal">
       {#each navLinks as page}
         <li>
-          <a class="font-semibold md:text-base text-sm" href={'#'}>{page}</a>
+          <a class="font-semibold md:text-base text-sm
+                    hover:bg-palette-200 focus:bg-palette-200 active:bg-red-300"
+             href={'#'}>{page}</a>
         </li>
       {/each}
     </ul>
