@@ -77,9 +77,6 @@ function OKLCHToHSL(oklch: OKLCH) : HSL {
                   + `\nFallback:\n${JSON.stringify(fb)}`);
     return fb;
   } else {
-    console.log("=============");
-    console.log(oklch);
-    console.log(hsl);
     return hsl;
   }
 }
