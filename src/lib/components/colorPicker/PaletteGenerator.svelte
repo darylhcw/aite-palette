@@ -2,6 +2,7 @@
   import ColorPicker from '$lib/components/colorPicker/ColorPicker.svelte';
   import { generatePaletteFromColor } from '$lib/util/paletteGenerator';
   import { getPaletteContext } from '$lib/context/palette.svelte';
+  import { updateDaisyUIThemeColors } from '$lib/daisyUI/themeColors';
   import type { HSL } from '$lib/types/colors';
   import type { PaletteComponent } from '$lib/types/palette';
 
@@ -24,6 +25,7 @@
     const { h, s, l } = col;
     const newColors = generatePaletteFromColor({ h:h, s:s, l:l });
     paletteContext?.setPaletteColors(newColors);
+    updateDaisyUIThemeColors();
   }
 </script>
 

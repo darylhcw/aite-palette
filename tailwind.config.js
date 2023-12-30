@@ -38,6 +38,7 @@ export default {
   },
   plugins: [require("daisyui")],
   daisyui: {
+    themes: false,
     logs: false,
   }
 }

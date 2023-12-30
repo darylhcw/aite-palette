@@ -8,18 +8,10 @@
   import DataDemo from '$components/demo/DataDemo.svelte';
   import TimelineDemo from '$components/demo/TimelineDemo.svelte';
   import { onMount } from 'svelte';
+  import { updateDaisyUIThemeColors } from '$lib/daisyUI/themeColors'
 
   onMount(() => {
-    let root = document?.documentElement;
-    if (root) {
-      // const prev = getComputedStyle(root).getPropertyValue("--p");
-
-      root.style.setProperty("--p", "215 25% 27%");
-      root.style.setProperty("--pc", "0 0% 100%");
-      root.style.setProperty("--b2", "214 32% 91%");
-
-      // return () => root.style.setProperty("--p", prev);
-    }
+    updateDaisyUIThemeColors();
   });
 </script>
 
