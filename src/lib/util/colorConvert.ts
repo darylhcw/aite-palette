@@ -1,5 +1,5 @@
 import type { HSL, OKLCH } from '$lib/types/colors';
-import { converter } from 'culori';
+import { converter, formatHex } from 'culori';
 
 const oklchConverter = converter('oklch');
 const hslConverter = converter('hsl');
@@ -14,6 +14,7 @@ const DEFAULT_OKLCH : OKLCH = {
   c: 0,
   l: 0
 };
+const DEFAULT_HEX = "#000000"
 
 /**
  * We store colors as "HSL strings" in CSS vars.
@@ -97,6 +98,18 @@ function clamp(num: number, min: number, max: number) {
   return Math.min(Math.max(num, min), max);
 }
 
+function HSLToHex(hsl: HSL) : string {
+  if (!hsl) return DEFAULT_HEX;
+
+  const res = formatHex({
+    mode: 'hsl',
+    h: hsl.h,
+    s: hsl.s/100,
+    l: hsl.l/100
+  });
+
+  return res;
+}
 
 function getHSLFromCSSVar(varname: string): HSL {
   if (!varname) return DEFAULT_HSL;
@@ -114,6 +127,14 @@ function setHSLToCSSVar(hsl: HSL, varname: string) {
   const hslStr = HSLObjToStr(hsl);
   document.documentElement.style.setProperty(varname, hslStr);
 }
+function getHexFromCSSVar(varname: string): string {
+  if (!varname) return DEFAULT_HEX;
+  if (typeof document === "undefined") return DEFAULT_HEX;
+
+  const val = getComputedStyle(document.documentElement).getPropertyValue(varname);
+  const hsl = HSLStrToObj(val);
+  return HSLToHex(hsl);
+}
 
 function roundHSLColorVals(color: HSL) {
   return {
@@ -126,9 +147,11 @@ function roundHSLColorVals(color: HSL) {
 export {
   HSLStrToObj,
   HSLObjToStr,
+  HSLToHex,
   HSLToOKLCH,
   OKLCHToHSL,
   getHSLFromCSSVar,
   setHSLToCSSVar,
+  getHexFromCSSVar,
   roundHSLColorVals,
 }

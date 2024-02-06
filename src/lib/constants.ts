@@ -1,6 +1,8 @@
 // Palette
 const MIN_LIGHTNESS = 19;
 const MAX_LIGHTNESS = 97;
+const MAIN_PALETTE_KEY = "main";
+const GREY_PALETTE_KEY = "greys";
 
 /**
  * Note:
@@ -30,6 +32,8 @@ const BRAND_TAILWIND_CSS = ["bg-palette-800", "bg-palette-600", "bg-palette-400"
 export {
   MIN_LIGHTNESS,
   MAX_LIGHTNESS,
+  MAIN_PALETTE_KEY,
+  GREY_PALETTE_KEY,
   PALETTE_RANGES,
   PALETTE_LENGTH,
   BRAND_TAILWIND_CSS

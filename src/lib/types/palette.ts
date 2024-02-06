@@ -16,5 +16,6 @@ export type PaletteChangeEvent = {
 export type SetPaletteColorFunc = (color: HSL) => void;
 
 export interface PaletteColor {
+  getPaletteColor: () => HSL;
   setPaletteColor: SetPaletteColorFunc;
 }

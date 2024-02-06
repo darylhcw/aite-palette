@@ -24,6 +24,15 @@ function createPalette() {
         item.color.setPaletteColor(colors[item.index]);
       })
     },
+    getPaletteColorHex: (index: number) => {
+      const palette = get(store);
+      for (const p of palette) {
+        if (p.index === index) {
+          return p.color.getPaletteColor();
+        }
+      }
+      return null;
+    },
     debug: () => {
       const palette = get(store);
       console.log(palette);
