@@ -27,7 +27,8 @@
     <header/>
   </div>
   <div class={`relative sm:w-1/2 w-full flex flex-col items-center`}>
-    <div class="relative max-h-96 sm:max-h-full w-full sm:self-center flex justify-center bg-black z-10">
+    <div class="relative max-h-96 sm:max-h-full w-full sm:self-center flex justify-center bg-black z-10
+                after:absolute after:w-full after:h-full after:top-0 after:bg-palette-100 after:opacity-50 after:mix-blend-multiply">
       <img class="max-w-md sm:max-w-full w-full max-h-96 sm:max-h-none object-cover sm:object-fill"
            src="/images/brushbite.png"
            alt="demo landing hero"/>

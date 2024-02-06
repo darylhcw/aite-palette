@@ -62,8 +62,8 @@
   <div class="relative -mt-5">
     <div class="relative max-w-md
                 rounded-full overflow-hidden
-                after:absolute after:w-full after:h-full after:top-0 after:rounded-full
-                after:shadow-[inset_0_8px_16px_8px_rgba(0,0,0,0)] after:shadow-slate-800">
+                after:absolute after:w-full after:h-full after:top-0 after:rounded-full after:bg-palette-100 after:opacity-50 after:mix-blend-multiply
+                after:shadow-[inset_0_8px_16px_8px_rgba(0,0,0,0)] after:shadow-palette-800">
       <img src={currentStep.src}
           alt={currentStep.name}
           class="w-full h-full rounded-full border-2 border-palette-800"/>
