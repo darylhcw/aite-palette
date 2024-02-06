@@ -49,8 +49,7 @@
     <DataDemo/>
   </DemoPage>
 
-  <!-- bgColor = slate-800 -->
-  <DemoPage bgColor="#1e293b">
+  <DemoPage bg="dark">
     <TimelineDemo/>
   </DemoPage>
 </main>

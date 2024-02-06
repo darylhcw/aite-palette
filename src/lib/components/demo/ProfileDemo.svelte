@@ -38,7 +38,7 @@
 
 <div class="relative max-w-3xl mx-auto sm:rounded-2xl rounded-xl overflow-hidden bg-white shadow-md">
   <div class="relative h-52 sm:h-60 pt-5 flex justify-center">
-    <div class="absolute top-0 w-full h-1/2 bg-slate-600"/>
+    <div class="absolute top-0 w-full h-1/2 bg-palette-600"/>
     <div class="relative">
       <div class="avatar w-[11.7rem] sm:w-[13.7rem] h-full rounded-full
                   after:absolute after:w-full after:h-full after:top-0 after:rounded-full after:shadow-inner after:shadow-slate-600">
@@ -46,7 +46,7 @@
             src={profilePic}
             alt="Profile of Emma Paletto"/>
       </div>
-       <div class="rounded-full p-2 absolute bottom-3 sm:bottom-2 right-6 h-10 w-10 bg-slate-600">
+       <div class="rounded-full p-2 absolute bottom-3 sm:bottom-2 right-6 h-10 w-10 bg-palette-600">
           <CameraIcon fill={"text-slate-100"}/>
       </div>
     </div>
@@ -54,11 +54,11 @@
 
   <header class="w-full mt-2 flex flex-col justify-center text-center">
     <h2 class="font-semibold sm:text-lg text-md">{firstName} {lastName}</h2>
-    <p class="font-normal text-neutral-400 sm:text-sm">{email}</p>
-    <p class="mt-4 italic text-neutral-700 sm:text-lg text-md">{`"${tagline}"`}</p>
+    <p class="font-normal text-pgreys-400 sm:text-sm">{email}</p>
+    <p class="mt-4 italic text-pgreys-700 sm:text-lg text-md">{`"${tagline}"`}</p>
   </header>
 
-  <form class="sm:px-16 px-4 pb-16">
+  <form on:submit|preventDefault class="sm:px-16 px-4 pb-16">
     <div class="mt-12 flex flex-wrap gap-4">
       {#each details as detail}
         <div class="md:mb-8 mb-3 flex-grow">
@@ -70,7 +70,7 @@
           {#if detail.label === "Email"}
             <div class="mt-3 ml-1">
               <label class="flex items-center gap-2">
-                <input type="checkbox" checked={true} class="checkbox"/>
+                <input type="checkbox" checked={true} class="checkbox checkbox-primary border-palette-300"/>
                 <span class="label-text text-sm">Display Publicly</span>
               </label>
             </div>

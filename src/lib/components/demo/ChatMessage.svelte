@@ -15,18 +15,18 @@
     </div>
   </div>
   <div class="chat-header my-1 pl-2 flex flex-wrap items-baseline gap-x-1">
-    <p class="sm:text-base text-xs text-neutral-700">{sender.name}</p>
-    <time class="sm:text-xs text-[0.625rem] text-neutral-400">{time}</time>
+    <p class="sm:text-base text-xs text-pgreys-700">{sender.name}</p>
+    <time class="sm:text-xs text-[0.625rem] text-pgreys-400">{time}</time>
     {#if !left }
     <div class="w-5 sm:w-6 self-center">
-      <DoubleCheckIcon fill="text-neutral-400"/>
+      <DoubleCheckIcon fill="text-pgreys-400"/>
     </div>
     {/if}
   </div>
   <div class="chat-bubble
               { left
-                ? "bg-slate-700 text-slate-100"
-                : "bg-slate-300 text-slate-900"
+                ? "bg-palette-700 text-palette-100"
+                : "bg-palette-300 text-palette-900"
               }
               sm:text-lg text-sm whitespace-pre-line">
     {message}

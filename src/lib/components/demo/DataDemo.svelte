@@ -1,6 +1,7 @@
 <script lang="ts">
   import { onMount } from 'svelte';
   import BarGraph from '$lib/components/svg/BarGraph.svelte';
+  import { mainPaletteHexStore } from '$lib/stores/mainPaletteCSSHex';
 
   let currentTime = new Date();
   const dateOptions: Intl.DateTimeFormatOptions = {
@@ -49,19 +50,23 @@
     },
   ]
 
-  let pieBorder = "border-slate-200";
-  let graphColors = [
+  let pieBorder = "border-palette-200";
+
+  $: graphHigh = $mainPaletteHexStore["--palette-200"];
+  $: graphMid = $mainPaletteHexStore["--palette-600"];
+  $: graphLow = $mainPaletteHexStore["--palette-400"];
+  $: graphColors = [
     {
-      name: "bg-slate-200",
-      code: "#E2E8F0"
+      name: "bg-palette-200",
+      code: graphHigh
     },
     {
-      name: "bg-slate-400",
-      code: "#94A3B8",
+      name: "bg-palette-400",
+      code: graphMid
     },
     {
-      name: "bg-slate-600",
-      code: "#334155",
+      name: "bg-palette-600",
+      code: graphLow
     }
   ];
 
@@ -72,7 +77,7 @@
       name: "Roselle Brushwelle",
       title: "Marketing Specialist",
       palette: "Pristine and Beautiful",
-      colors: ["bg-slate-200", "bg-slate-300", "bg-slate-400", "bg-slate-500", "bg-slate-600"],
+      colors: ["bg-palette-200", "bg-palette-300", "bg-palette-400", "bg-palette-500", "bg-palette-600"],
       status: "Approved",
       cost: "$1578.69",
     },
@@ -80,7 +85,7 @@
       name: "Risa Romano",
       title: "Marketing Specialist",
       palette: "Pristine and Beautiful",
-      colors: ["bg-slate-200", "bg-slate-300", "bg-slate-400", "bg-slate-500", "bg-slate-600"],
+      colors: ["bg-palette-200", "bg-palette-300", "bg-palette-400", "bg-palette-500", "bg-palette-600"],
       status: "Pending",
       cost: "$1578.69",
     },
@@ -88,7 +93,7 @@
       name: "Stella Artiste",
       title: "Marketing Specialist",
       palette: "Pristine and Beautiful",
-      colors: ["bg-slate-200", "bg-slate-300", "bg-slate-400", "bg-slate-500", "bg-slate-600"],
+      colors: ["bg-palette-200", "bg-palette-300", "bg-palette-400", "bg-palette-500", "bg-palette-600"],
       cost: "$1578.69",
       status: "Rejected",
       profit: "$295",
@@ -121,30 +126,30 @@
 <div class="sm:px-8 px-4">
   <div class="max-w-5xl mx-auto flex flex-col justify-center">
     <header class="w-full mb-8 flex justify-between items-baseline flex-wrap">
-      <h2 class="lg:text-2xl sm:text-xl text-lg text-slate-800">
+      <h2 class="lg:text-2xl sm:text-xl text-lg text-pgreys-800">
         Summary
       </h2>
-      <time class="lg:text-xl sm:text-lg text-sm text-slate-600">
+      <time class="lg:text-xl sm:text-lg text-sm text-pgreys-600">
         {date}, {time}
       </time>
     </header>
 
     <div class="stats sm:stats-horizontal stats-vertical
                 sm:w-full mb-9 mx-auto
-                font-roboto bg-slate-600 divide-x-2
+                font-roboto bg-palette-700 divide-x-2
                 shadow-lg shadow-black-1/4">
       {#each stats as stat}
-        <div class="stat border-slate-400 ">
+        <div class="stat border-palette-400 ">
           <div class="stat-title lg:text-2xl md:text-xl sm:text-base
-                      text-slate-300">
+                      text-palette-100">
             {stat.title}
           </div>
           <div class="stat-value lg:text-5xl md:text-4xl sm:text-2xl
-                      text-semibold text-slate-100">
+                      text-semibold text-palette-100">
             {stat.text}
           </div>
           <div class="stat-desc lg:text-xl md:text-lg sm:text-sm
-                      text-slate-300">
+                      text-palette-200">
             {stat.sub}
           </div>
         </div>
@@ -172,7 +177,7 @@
           </div>
           <ol class="flex justify-center lg:gap-x-7 md:gap-x-4 gap-x-2">
             {#each graphColors as color}
-            <li class="flex items-center text-neutral-800 lg:text-xl md:text-base sm:text-sm text-xs">
+            <li class="flex items-center text-pgreys-800 lg:text-xl md:text-base sm:text-sm text-xs">
               <div class="{color.name} md:w-5 md:h-5 sm:w-4 sm:h-4 w-3 h-3 sm:mr-1 mr-[0.125rem] rounded-full"/>
               {color.code}
             </li>
@@ -189,11 +194,11 @@
             <small class="self-center -rotate-90 md:text-xl sm:text-base text-xs">
               USD
             </small>
-            <BarGraph/>
+            <BarGraph fillHigh={graphHigh} fillMid={graphMid} fillLow={graphLow}/>
           </div>
         <ol class="flex justify-center lg:gap-x-7 md:gap-x-4 gap-x-2">
           {#each graphColors as color}
-          <li class="flex items-center text-neutral-800 lg:text-xl md:text-base sm:text-sm text-xs">
+          <li class="flex items-center text-pgreys-800 lg:text-xl md:text-base sm:text-sm text-xs">
             <div class="{color.name} md:w-5 md:h-5 sm:w-4 sm:h-4 w-3 h-3 sm:mr-1 mr-[0.125rem] rounded-full"/>
             {color.code}
           </li>
@@ -216,9 +221,9 @@
       <table class="table font-roboto">
         <thead class="sm:text-sm text-xs text-black">
           <tr class="border-none">
-            <th class="sm:w-12 w-6 bg-slate-200 rounded-l-lg border-r-2 border-white"/>
+            <th class="sm:w-12 w-6 bg-palette-200 rounded-l-lg border-r-2 border-white"/>
             {#each tableCols as col, index}
-              <th class="font-normal {index >= 3 ? "text-right" : ""} bg-slate-200
+              <th class="font-normal {index >= 3 ? "text-right" : ""} bg-palette-200
                         {index === tableCols.length - 1 ? "rounded-r-lg" : ""} border-r-2 border-white">
                 {col}
               </th>
@@ -231,7 +236,7 @@
               <th class="font-normal">{i+1}</th>
               <td>
                 <p>{row.name}</p>
-                <p class="text-neutral-400">{row.title}</p>
+                <p class="text-pgreys-400">{row.title}</p>
               </td>
               <td>
                 <p>{row.palette}</p>

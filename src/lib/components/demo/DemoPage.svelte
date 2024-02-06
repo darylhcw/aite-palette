@@ -1,16 +1,14 @@
 <script lang="ts">
   import Navbar from './Navbar.svelte';
-
   export let paddings = true;
-  export let bgColor = "#f1f5f9"; // slate-100
+  export let bg: "light" | "dark" = "light";
 </script>
 
 <section class="mb-8 overflow-hidden rounded-xl sm:rounded-2xl
                 border-t border-slate-200">
   <Navbar/>
   {#if paddings}
-    <div class="pt-10 pb-16"
-         style="background: {bgColor};">
+    <div class="pt-10 pb-16 { bg === "light" ? "bg--100" : "bg-palette-800" }">
       <slot/>
     </div>
   {:else}

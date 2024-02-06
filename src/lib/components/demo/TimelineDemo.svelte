@@ -50,11 +50,11 @@
 
 </script>
 
-<div class="py-2 flex flex-col items-center justify-center bg-slate-800">
+<div class="py-2 flex flex-col items-center justify-center bg-palette-800">
   <ol class="steps z-20">
     {#each steps as step}
       <button class="step custom-step { step.name === currentStep.name ? "step-current" : "step-normal" }
-                     before:border-2 before:border-slate-300 after:border-2 after:border-slate-300"
+                     before:border-2 before:border-palette-300 after:border-2 after:border-palette-300"
               data-content=""
               on:click={() => setCurrentStep(step)}/>
     {/each}
@@ -66,23 +66,23 @@
                 after:shadow-[inset_0_8px_16px_8px_rgba(0,0,0,0)] after:shadow-slate-800">
       <img src={currentStep.src}
           alt={currentStep.name}
-          class="w-full h-full rounded-full border-2 border-slate-800"/>
+          class="w-full h-full rounded-full border-2 border-palette-800"/>
     </div>
     <button class="absolute top-1/2 -left-10 -mt-2 w-11 h-11
-                   font-mono text-slate-300 text-4xl
-                   rounded-full bg-slate-800 border-2 border-slate-300
+                   font-mono text-palette-300 text-4xl
+                   rounded-full bg-palette-800 border-2 border-palette-300
                    shadow-md shadow-black
-                   focus-visible:bg-slate-500 hover:bg-slate-500 focus:outline-none"
+                   focus-visible:bg-palette-500 hover:bg-palette-500 focus:outline-none"
             on:click={prevStep}>
-      {"<"}
+      <span class="absolute bottom-[1px] left-0 right-0">{"<"}</span>
     </button>
     <button class="absolute top-1/2 -right-10 -mt-2 w-11 h-11
-                   font-mono text-slate-300 text-4xl
-                   rounded-full bg-slate-800 border-2 border-slate-300
+                   font-mono text-palette-300 text-4xl
+                   rounded-full bg-palette-800 border-2 border-palette-300
                    shadow-md shadow-black
-                   focus-visible:bg-slate-500 hover:bg-slate-500 focus:outline-none"
+                   focus-visible:bg-palette-500 hover:bg-palette-500 focus:outline-none"
             on:click={nextStep}>
-      {">"}
+      <span class="absolute bottom-[1px] left-0 right-0">{">"}</span>
     </button>
   </div>
   <div class="py-2 px-10 -mt-5 max-w-[20rem] w-full z-10
@@ -102,18 +102,15 @@
     box-shadow: 0 2px 4px #000000;
   }
   .step-normal::after {
-    /* slate-800 */
-    background: #1e293b;
+    background-color: hsl(var(--palette-800));
   }
   .custom-step:hover, .custom-step:focus {
     outline: none;
   }
   .step-normal:hover:after, .step-normal:focus:after {
-    /* slate-500 */
-    background: #64748b;
+    background-color: hsl(var(--palette-500));
   }
   .step-current::after {
-    /* slate-100 */
-    background:#f1f5f9;
+    background-color: hsl(var(--palette-100));
   }
 </style>

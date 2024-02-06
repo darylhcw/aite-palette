@@ -9,11 +9,11 @@
     <img class="border border-slate-200 rounded-full" src={questionImg} alt="A girl with a finger to her chin, confused"/>
   </figure>
   <h3 class="-mt-14 -mb-2 py-2 px-8 rounded-2xl z-20 rotate-1
-              sm:text-2xl text-lg font-semibold text-neutral-700 bg-white shadow-md shadow-neutral-500">
+              sm:text-2xl text-lg font-semibold text-pgreys-700 bg-white shadow-md shadow-pgreys-500">
     No Posts Found!
   </h3>
-  <p class="py-3 px-5 rounded-2xl sm:text-xl text-base text-slate-800 bg-slate-300
-            shadow-[inset_0_4px_4px_0_rgba(0,0,0,0)] shadow-slate-400 z-10">
+  <p class="py-3 px-5 rounded-2xl sm:text-xl text-base text-palette-800 bg-palette-300
+            shadow-[inset_0_4px_4px_0_rgba(0,0,0,0)] shadow-pgreys-400 z-10">
     Please try a different search query and/or clear search filters.
   </p>
 </div>

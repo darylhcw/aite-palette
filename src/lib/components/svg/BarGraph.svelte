@@ -1,7 +1,7 @@
 <script lang="ts">
   export let fillHigh = "#E2E8F0";
-  export let fillLow = "#64748B";
   export let fillMid = "#94A3B8";
+  export let fillLow = "#64748B";
 </script>
 
 <svg class="w-full h-full"

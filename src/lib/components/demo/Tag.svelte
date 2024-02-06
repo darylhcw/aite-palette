@@ -4,21 +4,20 @@
   export let selectable = false;
   export let selected = false;
 
-  // Let here be an example of .. when Tailwind is not so great vs "just CSS".
-  $:baseClasses = `rounded-badge px-4 py-[0.125rem] border ${size === "small" ? "text-sm" : "text-base"} font-roboto`
-  let selectedClasses = "bg-slate-700 text-slate-200 border-slate-700"
-  let deselectedClasses = "bg-white text-black border-slate-500"
+  $:baseClasses = `rounded-badge px-4 py-[0.125rem] border border-palette-700 ${size === "small" ? "text-sm" : "text-base"} font-roboto`;
+  let selectedClasses = "bg-palette-700 text-palette-100 border-palette-700 hover:bg-palette-500"
+  let deselectedClasses = "bg-white text-palette-700 border-palette-500 hover:bg-palette-300"
 </script>
 
 {#if selectable}
   <button class="{baseClasses} {selected ? selectedClasses : deselectedClasses}
-                 {selected ? "hover:bg-slate-500" : "hover:bg-slate-300"}
                   whitespace-pre"
           on:click>
     {selected ? "X " : ""} {tag}
   </button>
 {:else}
-  <div class="{baseClasses} {selected ? selectedClasses : deselectedClasses}">
+  <div class="{baseClasses} {selected ? selectedClasses : deselectedClasses}
+               hover:bg-current">
     {tag}
   </div>
 {/if}
