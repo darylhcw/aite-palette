@@ -27,12 +27,11 @@
         format: "hex",
       });
     });
-
-    if (paletteChangeEvent) {
-      palette.on("change", (event) => {
-        paletteChangeEvent!(event);
-      });
-    }
+    palette.on("change", (event) => {
+      if (paletteChangeEvent) {
+        paletteChangeEvent(event);
+      }
+    })
     if (afterPaletteInit) afterPaletteInit(palette);
   });
  </script>
