@@ -4,7 +4,7 @@
   import { chatList } from './ChatData';
 </script>
 
-<div class="sm:w-[19rem] max-w-[19rem] w-full h-full bg-pgreys-700
+<aside class="sm:w-[19rem] max-w-[19rem] w-full h-full bg-palette-800
             sm:rounded-none rounded-tr-2xl rounded-br-2xl">
   <div class="w-full py-5 md:px-5 px-2 flex gap-x-3">
     <button class="md:hidden text-base text-slate-100" on:click>
@@ -14,7 +14,7 @@
   </div>
   <menu class="flex flex-col">
     {#each chatList as chat, index}
-      <li class="p-3 flex gap-x-3 items-center { index === 0 ? "bg-palette-800 border-t-2" : ""} border-b-2 border-palette-500">
+      <li class="p-3 flex gap-x-3 items-center { index === 0 ? "bg-palette-600 border-t-2" : ""} border-b-2 border-palette-500">
         <div class=" avatar sm:w-12 w-10 rounded-full">
           <img class="rounded-full" src={chat.contact.src} alt="profile of {chat.contact.name}"/>
         </div>
@@ -37,4 +37,4 @@
       </li>
     {/each}
   </menu>
-</div>
+</aside>
