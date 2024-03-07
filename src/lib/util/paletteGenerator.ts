@@ -11,6 +11,7 @@ const MAX_HUE_ROTATION = 30;
 const MAX_HUE_STEP = 3;
 const CENTRAL_LIGHT_HUES = [60, 180, 300];
 const CENTRAL_DARK_HUES = [120, 240, 360];
+const MUTED_MAX_SAT = 4;
 
 /**
  * Takes a color in any position on the palette, and generates
@@ -29,7 +30,11 @@ const CENTRAL_DARK_HUES = [120, 240, 360];
  * Returns: A set of 8 HSL colors in an array, where the indexes
  *          correspond to positions in the palette.
  */
-function generatePaletteFromColor(color: HSL) : HSL[] {
+function generatePaletteFromColor(color: HSL, muteColors = false) : HSL[] {
+  if (muteColors) {
+    color.s = Math.min(color.s, MUTED_MAX_SAT);
+  }
+
   let res : HSL[] = [];
   const oklch = HSLToOKLCH(color);
   const pos = getPalettePos(oklch.l  * 100); // Scale to 0-100 used in PALETTE_RANGES
@@ -48,7 +53,6 @@ function generatePaletteFromColor(color: HSL) : HSL[] {
     currLightColor = getNextColor(col, i);
     res.push(currLightColor);
   }
-
   res.reverse();
   res.push(color);
 
