@@ -9,10 +9,14 @@
   import TimelineDemo from '$components/demo/TimelineDemo.svelte';
   import { onMount } from 'svelte';
   import { updateDaisyUIThemeColors } from '$lib/daisyUI/themeColors'
+  import upArrow from '$lib/assets/icons/up-arrow.svg';
+  import downArrow from '$lib/assets/icons/down-arrow.svg';
 
   onMount(() => {
     updateDaisyUIThemeColors();
   });
+
+  let paletteCollapsed = false;
 </script>
 
 <svelte:head>
@@ -21,12 +25,23 @@
 </svelte:head>
 
 <main class="px-4">
-  <section class="-mx-4 mb-8 p-6 sticky top-0 overflow-hidden z-50 bg-white shadow-md">
+  <section class="-mx-4 mb-8 p-6 pb-2 { paletteCollapsed ? "py-3" : "" } sticky top-0 overflow-hidden z-50 bg-white shadow-md transition-all">
     <div class="mx-auto max-w-screen-xl">
-      <Palette/>
+      <Palette collapsed={paletteCollapsed}/>
     </div>
-    <button>
-    </button>
+    <div class="flex justify-center mt-4 z-10">
+      {#if paletteCollapsed}
+        <button class="z-10"
+                on:click={ () => paletteCollapsed = false }>
+          <img src={downArrow} alt="expand"/>
+        </button>
+      {:else}
+        <button class="z-10"
+                on:click={ () => paletteCollapsed = true }>
+          <img src={upArrow} alt="collapse"/>
+        </button>
+      {/if}
+    <div>
   </section>
 
   <DemoPage paddings={false}>

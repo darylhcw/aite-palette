@@ -12,6 +12,7 @@
   export let defaultColor: HSL | string;
   export let generateText = "Generate";
   export let btnType = "btn-primary"
+  export let useSmallBtn = false;
   export let muteColors = false; // Used for greys.
   let palette: PaletteComponent;
 
@@ -43,7 +44,7 @@
               defaultColor={defaultColor}
               afterPaletteInit={(p) => { palette = p }}/>
 
-  <button class="btn {btnType} btn-outline btn-sm"
+  <button class="btn {btnType} btn-outline { useSmallBtn ? "btn-xs" : "btn-sm" }"
           on:click={generatePaletteColors}>
     {generateText}
   </button>
