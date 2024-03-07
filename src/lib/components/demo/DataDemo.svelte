@@ -74,7 +74,7 @@
   let tableCols = ["NAME", "PALETTE", "STATUS", "TOTAL COST"]
   let tableRows = [
     {
-      name: "Roselle Brushwelle",
+      name: "Rose Brushwelle",
       title: "Marketing Specialist",
       palette: "Pristine and Beautiful",
       colors: ["bg-palette-200", "bg-palette-300", "bg-palette-400", "bg-palette-500", "bg-palette-600"],

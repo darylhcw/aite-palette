@@ -1,8 +1,8 @@
 import emmaPic from '$assets/images/emmaProfile.png';
 import risaPic from '$assets/images/risa.png';
 import stellaPic from '$assets/images/stella.png';
-import rosellePic from '$assets/images/roselle.png';
-import diegoPic from '$assets/images/diego.png';
+import rosePic from '$assets/images/rose.png';
+import giovanniPic from '$assets/images/giovanni.png';
 
 // Note: The chat doesn't actually "work or has proper data types!".
 export interface ChatListItem {
@@ -34,13 +34,13 @@ export const contacts = {
     name: "Stella Artiste",
     src: stellaPic,
   },
-  diego: {
-    name: "Diego Sketcher",
-    src: diegoPic,
+  giovanni: {
+    name: "Giovanni Sketcher",
+    src: giovanniPic,
   },
   rosemi: {
-    name: "Roselle Brushwelle",
-    src: rosellePic,
+    name: "Rose Brushwelle",
+    src: rosePic,
   }
 }
 
@@ -58,7 +58,7 @@ export const chatList : ChatListItem[] = [
     time: "11:59 AM"
   },
   {
-    contact: contacts.diego,
+    contact: contacts.giovanni,
     lastMessage: "Call me ASAP",
     lastSenderIsUs: true,
     time: "Yesterday"
