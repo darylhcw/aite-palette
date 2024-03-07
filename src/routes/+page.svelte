@@ -11,6 +11,7 @@
   import { updateDaisyUIThemeColors } from '$lib/daisyUI/themeColors'
   import upArrow from '$lib/assets/icons/up-arrow.svg';
   import downArrow from '$lib/assets/icons/down-arrow.svg';
+  import githubIcon from '$lib/assets/icons/github.svg';
 
   onMount(() => {
     updateDaisyUIThemeColors();
@@ -26,10 +27,18 @@
 
 <main class="px-4">
   <section class="-mx-4 mb-8 p-6 pb-2 { paletteCollapsed ? "py-3" : "" } sticky top-0 overflow-hidden z-50 bg-white shadow-md transition-all">
-    <div class="mx-auto max-w-screen-xl">
+    <div class="mx-auto max-w-screen-xl relative">
+      <a class="absolute right-0 top-0 gap-x-1 flex items-center hover:text-slate-400"
+         href="https://github.com/darylhcw/aite-palette?tab=readme-ov-file#readme"
+         target="_blank">
+        About
+        <img src={githubIcon}
+             alt="github/about"
+             class="inline-block w-8 h-8"/>
+      </a>
       <Palette collapsed={paletteCollapsed}/>
     </div>
-    <div class="flex justify-center mt-4 z-10">
+    <div class="flex justify-center { paletteCollapsed ? "mt-2" : "mt-4" } z-10">
       {#if paletteCollapsed}
         <button class="z-10"
                 on:click={ () => paletteCollapsed = false }>
