@@ -20,10 +20,14 @@
   <meta name="description" content="Color palette generator for modern-looking websites with examples.">
 </svelte:head>
 
-<main class="mx-auto max-w-screen-xl px-4">
-  <DemoPage>
-    <Palette/>
-  </DemoPage>
+<main class="px-4">
+  <section class="-mx-4 mb-8 p-6 sticky top-0 overflow-hidden z-50 bg-white shadow-md">
+    <div class="mx-auto max-w-screen-xl">
+      <Palette/>
+    </div>
+    <button>
+    </button>
+  </section>
 
   <DemoPage paddings={false}>
     <LandingDemo/>

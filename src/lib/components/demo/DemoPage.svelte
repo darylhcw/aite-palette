@@ -4,7 +4,7 @@
   export let bg: "light" | "dark" = "light";
 </script>
 
-<section class="mb-8 overflow-hidden rounded-xl sm:rounded-2xl
+<section class="mb-8 mx-auto m max-w-screen-xl overflow-hidden rounded-xl sm:rounded-2xl
                 border-t border-slate-200">
   <Navbar/>
   {#if paddings}

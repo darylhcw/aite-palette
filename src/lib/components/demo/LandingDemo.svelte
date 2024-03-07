@@ -16,13 +16,13 @@
         See Your Palette in Action
       </h2>
       <p class="mb-3 lg:text-base min-[52.5rem]:text-sm leading-snug text-pgreys-800">
-        Examples made with DaisyUI and Tailwind CSS.
+        Simple and modern examples for inspiration.
       </p>
-      <button class="btn btn-primary btn-sm md:btn-md shadow-md  ">
-        Randomize
+      <button class="btn btn-primary btn-sm md:btn-md w-24 shadow-md  ">
+        Primary
       </button>
-      <button class="btn btn-sm md:btn-md mb-6 shadow-md">
-        Randomize
+      <button class="btn btn-sm md:btn-md w-24 mb-6 shadow-md">
+        Secondary
       </button>
     <header/>
   </div>

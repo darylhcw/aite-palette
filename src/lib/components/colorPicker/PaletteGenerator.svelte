@@ -11,6 +11,8 @@
   export let paletteKey: string;
   export let defaultColor: HSL | string;
   export let generateText = "Generate";
+  export let btnType = "btn-primary"
+  export let muteColors = false; // Used for greys.
   let palette: PaletteComponent;
 
   const paletteContext = getPaletteContext(paletteKey);
@@ -25,7 +27,7 @@
 
     const col = palette.getColor();
     const { h, s, l } = col;
-    const newColors = generatePaletteFromColor({ h:h, s:s, l:l });
+    const newColors = generatePaletteFromColor({ h:h, s:s, l:l }, muteColors);
     paletteContext?.setPaletteColors(newColors);
 
     if (paletteKey === MAIN_PALETTE_KEY) {
@@ -36,10 +38,13 @@
   }
 </script>
 
-<ColorPicker pickerKey={key}
-            defaultColor={defaultColor}
-            afterPaletteInit={(p) => { palette = p }}/>
+<div class="flex items-center justify-center gap-3">
+  <ColorPicker pickerKey={key}
+              defaultColor={defaultColor}
+              afterPaletteInit={(p) => { palette = p }}/>
 
-<button on:click={generatePaletteColors}>
-  {generateText}
-</button>
+  <button class="btn {btnType} btn-outline btn-sm"
+          on:click={generatePaletteColors}>
+    {generateText}
+  </button>
+</div>

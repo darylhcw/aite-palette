@@ -17,7 +17,7 @@
 
 </script>
 
-<div class="relative navbar shadow bg-white z-50">
+<div class="relative navbar px-2 shadow bg-white z-40">
   <div class="navbar-start relative flex align-center">
     <button class="sm:hidden cursor-pointer" on:click={toggleHamburger}>
       <img class="w-8 mr-2"

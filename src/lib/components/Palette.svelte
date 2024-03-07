@@ -17,32 +17,38 @@
   })
 </script>
 
-<h2 class="text-5xl p-4">
-  Palette
-</h2>
-
-<div class="flex mb-2 gap-2">
-  <PaletteGenerator paletteKey={MAIN_PALETTE_KEY}
-                    defaultColor="#94a3b8"
-                    generateText="Generate Main" />
+<div class="flex gap-12">
+  <div>
+    <div class="flex mb-3 gap-2">
+      <PaletteGenerator paletteKey={MAIN_PALETTE_KEY}
+                        defaultColor="#94a3b8"
+                        generateText="Generate Main" />
+    </div>
+    <div class="flex gap-x-1 flex-wrap mb-5">
+      {#each paletteVars as varname, i}
+        <PaletteColor paletteKey={MAIN_PALETTE_KEY}
+                      palettePos={i}
+                      cssColorVar={varname} />
+      {/each}
+    </div>
+  </div>
+  <div>
+    <div class="flex mb-3 gap-2">
+      <PaletteGenerator paletteKey={GREY_PALETTE_KEY}
+                        defaultColor="#a3a3a3"
+                        generateText="Generate Greys"
+                        btnType="btn-neutral"
+                        muteColors={true}/>
+    </div>
+    <div class="flex gap-x-1 flex-wrap">
+      {#each greyVars as varname, i}
+        <PaletteColor paletteKey={GREY_PALETTE_KEY}
+                      palettePos={i}
+                      cssColorVar={varname} />
+      {/each}
+    </div>
+  </div>
 </div>
-<div class="flex gap-x-1 flex-wrap mb-5">
-  {#each paletteVars as varname, i}
-    <PaletteColor paletteKey={MAIN_PALETTE_KEY}
-                  palettePos={i}
-                  cssColorVar={varname} />
-  {/each}
-</div>
-
-<div class="flex mb-2 gap-2">
-  <PaletteGenerator paletteKey={GREY_PALETTE_KEY}
-                    defaultColor="#a3a3a3"
-                    generateText="Generate Greys" />
-</div>
-<div class="flex gap-x-1 flex-wrap">
-  {#each greyVars as varname, i}
-    <PaletteColor paletteKey={GREY_PALETTE_KEY}
-                  palettePos={i}
-                  cssColorVar={varname} />
-  {/each}
-</div>
+<p class="text-neutral-700">
+  Select a base color, then hit generate! Greys will be muted if necessary. Note not all colors are used.
+</p>
