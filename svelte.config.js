@@ -11,7 +11,9 @@ const config = {
 	kit: {
 		// https://kit.svelte.dev/docs/adapter-static#github-pages
 		adapter: adapter(),
-
+		paths: {
+			base: process.argv.includes('dev') ? '' : process.env.BASE_PATH
+		},
 		alias: {
 			'$lib': "src/lib/",
 			'$assets': "src/lib/assets",
