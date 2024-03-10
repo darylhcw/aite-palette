@@ -1,5 +1,5 @@
 <script>
-  import questionImg from '$assets/images/question.png'
+  import questionImg from '$assets/images/question.webp'
 </script>
 
 <div class="flex flex-col items-center  ">

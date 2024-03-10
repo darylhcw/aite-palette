@@ -1,9 +1,9 @@
 <script lang="ts">
-  import ideaImg from "$assets/images/stepIdea.png";
-  import researchImg from "$assets/images/stepResearch.png";
-  import prototypeImg from "$assets/images/stepPrototype.png";
-  import testingImg from "$assets/images/stepTesting.png";
-  import launchImg from "$assets/images/stepLaunch.png";
+  import ideaImg from "$assets/images/stepIdea.webp";
+  import researchImg from "$assets/images/stepResearch.webp";
+  import prototypeImg from "$assets/images/stepPrototype.webp";
+  import testingImg from "$assets/images/stepTesting.webp";
+  import launchImg from "$assets/images/stepLaunch.webp";
 
   interface Step {
     name: string;

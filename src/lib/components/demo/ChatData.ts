@@ -1,8 +1,8 @@
-import emmaPic from '$assets/images/emmaProfile.png';
-import risaPic from '$assets/images/risa.png';
-import stellaPic from '$assets/images/stella.png';
-import rosePic from '$assets/images/rose.png';
-import giovanniPic from '$assets/images/giovanni.png';
+import emmaPic from '$assets/images/emmaProfile.webp';
+import risaPic from '$assets/images/risa.webp';
+import stellaPic from '$assets/images/stella.webp';
+import rosePic from '$assets/images/rose.webp';
+import giovanniPic from '$assets/images/giovanni.webp';
 
 // Note: The chat doesn't actually "work or has proper data types!".
 export interface ChatListItem {

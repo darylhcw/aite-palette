@@ -1,8 +1,8 @@
 <script lang="ts">
-  import elegantPic from '$assets/images/blogElegant.png';
-  import typographyPic from '$assets/images/blogTypography.png';
-  import colorPic from '$assets/images/blogColor.png';
-  import themesPic from '$assets/images/blogThemes.png';
+  import elegantPic from '$assets/images/blogElegant.webp';
+  import typographyPic from '$assets/images/blogTypography.webp';
+  import colorPic from '$assets/images/blogColor.webp';
+  import themesPic from '$assets/images/blogThemes.webp';
 
   import SearchBar from '$components/demo/SearchBar.svelte';
   import Tag from '$components/demo/Tag.svelte';

@@ -1,6 +1,7 @@
 <script lang="ts">
   import { mediaQuery } from '$lib/stores/mediaQuery.svelte';
   import { BRAND_TAILWIND_CSS as palette } from '$lib/constants';
+  import coverImage from '$assets/images/brushBite.webp';
 
   const rectPaletteOffsetRem = 0.75;
   const rectPaletteOffsetRemMobile = 0.5;
@@ -30,8 +31,8 @@
     <div class="relative max-h-96 sm:max-h-full w-full sm:self-center flex justify-center bg-black z-10
                 after:absolute after:w-full after:h-full after:top-0 after:bg-palette-100 after:opacity-50 after:mix-blend-multiply">
       <img class="max-w-md sm:max-w-full w-full max-h-96 sm:max-h-none object-cover sm:object-fill"
-           src="/images/brushbite.png"
-           alt="demo landing hero"/>
+           src={coverImage}
+           alt="demo landing cover/hero"/>
     </div>
     <!-- Wide-screen horizontal palette effect  -->
     {#each palette as color, i}
