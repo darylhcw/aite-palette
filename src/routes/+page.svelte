@@ -28,13 +28,14 @@
 <main class="px-4">
   <section class="-mx-4 mb-8 p-6 pb-2 { paletteCollapsed ? "py-3" : "" } sticky top-0 overflow-hidden z-50 bg-white shadow-md transition-all">
     <div class="mx-auto max-w-screen-xl relative">
-      <a class="absolute right-0 top-0 gap-x-1 flex items-center hover:text-slate-400"
+      <a class="mb-3 -mt-3 gap-x-1 flex items-center justify-end
+                text-md hover:text-slate-400"
          href="https://github.com/darylhcw/aite-palette?tab=readme-ov-file#readme"
          target="_blank">
         About
         <img src={githubIcon}
              alt="github/about"
-             class="inline-block w-8 h-8"/>
+             class="inline-block w-7 h-7"/>
       </a>
       <Palette collapsed={paletteCollapsed}/>
     </div>

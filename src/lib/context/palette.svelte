@@ -4,9 +4,10 @@
 
   type PaletteStoreType = ReturnType<typeof paletteStore>
 
-  function createPaletteContext(key: string) {
+  function createPaletteContext(key: string): PaletteStoreType {
     const store = paletteStore();
     setContext<PaletteStoreType>(key, store);
+      return getPaletteContext(key);
   }
 
   function getPaletteContext(key: string): PaletteStoreType {

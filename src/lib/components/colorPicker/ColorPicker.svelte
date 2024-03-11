@@ -43,5 +43,9 @@
   :global(.alwan__button.alwan__reference) {
     border: none;
     outline: none;
+    @media screen and (max-width:360px) {
+      width: 22px;
+      height: 22px;
+    }
   }
 </style>

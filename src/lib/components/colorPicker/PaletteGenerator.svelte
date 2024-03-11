@@ -53,7 +53,7 @@
 
 </script>
 
-<div class="flex items-center justify-center gap-3">
+<div class="flex items-center justify-center gap-3 flex-shrink-0">
   <ColorPicker pickerKey={key}
                defaultColor={defaultColor}
                afterPaletteInit={(p) => { palette = p }}/>

@@ -7,6 +7,7 @@
 import { writable, get } from 'svelte/store';
 import type { HSL } from '$lib/types/colors'
 import type { PaletteColor } from '$lib/types/palette';
+import { HSLToHex } from '$lib/util/colorConvert';
 
 function createPalette() {
   const store = writable<{ index: number, color:PaletteColor }[]>([]);
@@ -32,6 +33,17 @@ function createPalette() {
         }
       }
       return null;
+    },
+    copyColorsHex: () => {
+      const palette = get(store);
+      let text = "";
+
+      for (let i=0; i < palette.length; i++) {
+        const color = palette[i].color.getPaletteColor();
+        const hex = HSLToHex(color)
+        text += (i < palette.length - 1) ? hex + ',' : hex;
+      }
+      return text;
     },
     debug: () => {
       const palette = get(store);
