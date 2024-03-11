@@ -54,5 +54,6 @@
   </div>
 </div>
 <p class="{ collapsed ? "h-0 opacity-0" : "mt-4" } text-neutral-700 transition-all">
-  Select a base color, then hit generate! Greys will be muted if necessary. Note not all colors are used.
+  Click the square at the top-left to select a color, then hit generate! Greys will be muted if necessary. Note not all colors are used.
+  Random will randomly select a base color and generate from that.
 </p>
