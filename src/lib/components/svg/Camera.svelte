@@ -3,9 +3,11 @@
 </script>
 
 
-<svg class="{fill} w-full h-full aspect-square"
+<svg role="img"
+     class="{fill} w-full h-full aspect-square"
      xmlns="http://www.w3.org/2000/svg"
      width="1em" height="1em" viewBox="0 0 16 16">
+  <text class="visually-hidden" font-size="0">Camera</text>
   <g fill="currentColor">
   <path d="M10.5 8.5a2.5 2.5 0 1 1-5 0a2.5 2.5 0 0 1 5 0z"/>
   <path d="M2 4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V6a2 2 0 0
