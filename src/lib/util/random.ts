@@ -1,8 +1,9 @@
 import type { HSL } from '$lib/types/colors';
 
+// Inclusive of both min/max, passing in 0,1 gives you 0-1.
 function getRandomInt(min: number, max: number) : number{
   min = Math.ceil(min);
-  max = Math.floor(max);
+  max = Math.floor(max) + 1;
   return Math.floor(Math.random() * (max - min) + min);
 }
 
