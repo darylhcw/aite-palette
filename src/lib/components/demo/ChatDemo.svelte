@@ -78,8 +78,10 @@
   .thin-scroll::-webkit-scrollbar {
     width: 0.375rem;
   }
-  .thin-scroll {
-    scrollbar-color: hsl(var(--palette-200)) hsl(var(--palette-600));
-    scrollbar-width: thin;
+  @supports not selector(::-webkit-scrollbar) {
+    .thin-scroll {
+      scrollbar-color: hsl(var(--palette-600)) hsl(var(--palette-200));
+      scrollbar-width: thin;
+    }
   }
 </style>
