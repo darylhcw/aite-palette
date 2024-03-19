@@ -43,7 +43,7 @@
       <div class="avatar w-[11.7rem] sm:w-[13.7rem] h-full rounded-full
                   after:absolute after:w-full after:h-full after:top-0 after:rounded-full after:shadow-inner after:shadow-palette-600
                   after:bg-palette-100 after:opacity-50 after:mix-blend-multiply">
-        <img class="rounded-full"
+        <img class="rounded-full aspect-square"
             src={profilePic}
             alt="Profile of Emma Paletto"/>
       </div>

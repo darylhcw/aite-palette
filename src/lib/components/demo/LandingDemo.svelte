@@ -30,7 +30,7 @@
   <div class={`relative sm:w-1/2 w-full flex flex-col items-center`}>
     <div class="relative max-h-96 sm:max-h-full w-full sm:self-center flex justify-center bg-black z-10
                 after:absolute after:w-full after:h-full after:top-0 after:bg-palette-100 after:opacity-50 after:mix-blend-multiply">
-      <img class="max-w-md sm:max-w-full w-full max-h-96 sm:max-h-none object-cover sm:object-fill"
+      <img class="max-w-md sm:max-w-full w-full max-h-96 sm:max-h-none object-cover sm:object-fill aspect-square"
            src={coverImage}
            alt="demo landing cover/hero"/>
     </div>

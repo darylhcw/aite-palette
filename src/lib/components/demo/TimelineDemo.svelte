@@ -65,8 +65,9 @@
                 after:absolute after:w-full after:h-full after:top-0 after:rounded-full after:bg-palette-100 after:opacity-50 after:mix-blend-multiply
                 after:shadow-[inset_0_8px_16px_8px_rgba(0,0,0,0)] after:shadow-palette-800">
       <img src={currentStep.src}
-          alt={currentStep.name}
-          class="w-full h-full rounded-full border-2 border-palette-800"/>
+           alt={currentStep.name}
+           loading="lazy"
+           class="w-full h-full rounded-full border-2 border-palette-800"/>
     </div>
     <button class="absolute top-1/2 -left-10 -mt-2 w-11 h-11
                    font-mono text-palette-300 text-4xl

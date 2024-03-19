@@ -85,7 +85,7 @@
   {@const post = filteredPosts[0]}
     <article class="sm:flex hidden card card-side h-80 mb-10 bg-white shadow-lg ">
       <figure class="md:w-80 w-64 shrink-0">
-        <img class="h-full" src={post.src} alt={post.title}>
+        <img class="h-full" src={post.src} alt={post.title} loading="lazy">
       </figure>
       <div class="px-10 pt-8 pb-3 flex flex-col">
         <header class="mb-4">
@@ -116,7 +116,7 @@
     {#each filteredPosts as post, index}
       <article class="{index === 0 ? "hidden": ""} card max-w-xs min-w-0 min-[0rem] min-[19rem]:h-[30rem] h-[25rem] text-black bg-white shadow-md">
         <figure>
-          <img class="w-full max-h-72 object-fill" src={post.src} alt={post.title}>
+          <img class="w-full max-h-72 object-fill" src={post.src} alt={post.title} loading="lazy">
         </figure>
         <div class="px-5 pt-4 pb-2 grow flex flex-col">
           <header class="mb-3">

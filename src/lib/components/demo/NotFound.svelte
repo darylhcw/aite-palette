@@ -6,7 +6,10 @@
   <figure class="relative sm:w-96 w-64 rounded-full overflow-hidden
                  after:absolute after:w-full after:h-full after:top-0 after:rounded-full
                  after:shadow-[inset_0_4px_8px_4px_rgba(0,0,0,0)] after:shadow-slate-100">
-    <img class="border border-slate-200 rounded-full" src={questionImg} alt="A girl with a finger to her chin, confused"/>
+    <img src={questionImg}
+         alt="A girl with a finger to her chin, confused"
+         loading="lazy"
+         class="border border-slate-200 rounded-full" />
   </figure>
   <h3 class="-mt-14 -mb-2 py-2 px-8 rounded-2xl z-20 rotate-1
               sm:text-2xl text-lg font-semibold text-pgreys-700 bg-white shadow-md shadow-pgreys-500">
